@@ -6,6 +6,7 @@
 package vistas;
 
 import bd.Conexion;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
 /**
@@ -194,7 +195,38 @@ public class IniciarSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassFocusLost
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-        conn.Conectar();
+        
+        Conexion query = new Conexion();
+        String user = txtUser.getText();
+        String pass = txtPass.getText();
+        
+        String aux = "0";
+        
+        String consulta = "SELECT * FROM USUARIO WHERE USERNAME='"+user+"'";
+        LinkedList<String> resultado = query.query(consulta);
+
+        
+        for (int i = 0; i < resultado.size(); i++) {
+            if (i==2) {
+                aux = resultado.get(i);
+            }
+        }
+        if(user.isEmpty() || pass.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Usuario/Contraseña Incorrectos");
+        }
+        else if (user.equals("Usuario") || pass.equals("Contraseña")) {
+            JOptionPane.showMessageDialog(this, "Usuario/Contraseña Incorrectos");
+        }
+        else{
+            if (pass.equals(aux)) {
+                JOptionPane.showMessageDialog(this, "Has iniciado sesión");
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Usuario/Contraseña Incorrectos");
+            }
+        }
+        
+        
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     /**
