@@ -3,22 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package secureplus;
-import bd.Conexion;
-
+package login.control;
 
 /**
  *
  * @author Marco
  */
-public class Main {
+public interface InterfaceValidacion {
     
-    
-    
-    public static void main(String[] args) {
-        Conexion conn;
-        conn = new Conexion();
-        
-    }
+    public void recibeUsuario(String texto);
+    public void recibeContrasena(String texto);
+    public void accionEntrar();
     
 }
