@@ -5,6 +5,8 @@
  */
 package login.control;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
@@ -46,7 +48,9 @@ public class UsuarioDAO {
     
     public boolean getUsuario(Usuario usuario){
         
+        
         String aux = convertirSHA256(usuario.getPassword());
+        
         
         String sql = "SELECT * FROM USUARIO WHERE USERNAME ='" + usuario.getUsername() + 
                 "' AND PASSWORD ='" + aux + "'";
@@ -61,6 +65,7 @@ public class UsuarioDAO {
         
         return false;
     }
+
     
     public String convertirSHA256(String password) {
 	MessageDigest md = null;
@@ -72,7 +77,7 @@ public class UsuarioDAO {
 		return null;
 	}
 	    
-	byte[] hash = md.digest(password.getBytes());
+	byte[] hash = md.digest(password.getBytes(StandardCharsets.UTF_8));
 	StringBuffer sb = new StringBuffer();
 	    
 	for(byte b : hash) {        
@@ -80,6 +85,9 @@ public class UsuarioDAO {
 	}
 	    
 	return sb.toString();
-}
+    }
+    
+
+    
     
 }
