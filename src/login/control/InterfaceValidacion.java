@@ -13,6 +13,6 @@ public interface InterfaceValidacion {
     
     public void recibeUsuario(String texto);
     public void recibeContrasena(String texto);
-    public void accionEntrar();
+    public boolean accionEntrar();
     
 }

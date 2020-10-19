@@ -38,12 +38,15 @@ public class VUsuarioController implements InterfaceValidacion {
     }
     
     @Override
-    public void accionEntrar(){
+    public boolean accionEntrar(){
         if (usuarioDAO.getUsuario(usuario)) {
             JOptionPane.showMessageDialog(null, "Inicio de sesión correcto");
+            return true;
+            
         }
         else{
             JOptionPane.showMessageDialog(null, "Usuario/Contraseña incorrecto");
+            return false;
         }
     }
     

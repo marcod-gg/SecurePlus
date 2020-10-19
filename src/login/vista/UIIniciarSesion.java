@@ -5,6 +5,7 @@
  */
 package login.vista;
 
+import app.vista.UIAdmin;
 import bd.Conexion;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
@@ -64,7 +65,7 @@ public class UIIniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 255, 102));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,7 +149,12 @@ public class UIIniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-        iValidacion.accionEntrar();
+        if(iValidacion.accionEntrar()){
+            UIAdmin abrir = new UIAdmin();
+            abrir.setVisible(true);
+            this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void txtUserCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtUserCaretUpdate
