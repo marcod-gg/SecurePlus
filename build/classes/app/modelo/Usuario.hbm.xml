@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-11-2020 20:26:54 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.modelo.Usuario" table="USUARIO" schema="SECUREPLUS" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="empresa" class="app.modelo.Empresa" fetch="select">
+            <column name="IDEMPRESA" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="estado" class="app.modelo.Estado" fetch="select">
+            <column name="IDESTADO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="rol" class="app.modelo.Rol" fetch="select">
+            <column name="IDROL" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="USERNAME" length="100" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="510" not-null="true" />
+        </property>
+        <property name="nombres" type="string">
+            <column name="NOMBRES" length="200" not-null="true" />
+        </property>
+        <property name="apaterno" type="string">
+            <column name="APATERNO" length="200" not-null="true" />
+        </property>
+        <property name="amaterno" type="string">
+            <column name="AMATERNO" length="200" not-null="true" />
+        </property>
+        <property name="rut" type="string">
+            <column name="RUT" length="30" not-null="true" />
+        </property>
+        <property name="correo" type="string">
+            <column name="CORREO" length="200" not-null="true" />
+        </property>
+        <set name="instancias" table="INSTANCIA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDUSUARIO" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="app.modelo.Instancia" />
+        </set>
+    </class>
+</hibernate-mapping>

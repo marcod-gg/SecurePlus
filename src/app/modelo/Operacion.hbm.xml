@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-11-2020 20:26:54 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.modelo.Operacion" table="OPERACION" schema="SECUREPLUS" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="modulo" class="app.modelo.Modulo" fetch="select">
+            <column name="IDMODULO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="250" not-null="true" />
+        </property>
+        <set name="rolOperacions" table="ROL_OPERACION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_OPERACION" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="app.modelo.RolOperacion" />
+        </set>
+    </class>
+</hibernate-mapping>

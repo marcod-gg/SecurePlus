@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-11-2020 20:26:54 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.modelo.Pago" table="PAGO" schema="SECUREPLUS" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="empresa" class="app.modelo.Empresa" fetch="select">
+            <column name="IDEMPRESA" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="estadopago" class="app.modelo.Estadopago" fetch="select">
+            <column name="IDESTADOPAGO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="mesanio" type="string">
+            <column name="MESANIO" length="20" not-null="true" />
+        </property>
+        <property name="monto" type="big_decimal">
+            <column name="MONTO" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="fechadesde" type="string">
+            <column name="FECHADESDE" length="200" not-null="true" />
+        </property>
+        <property name="fechahasta" type="string">
+            <column name="FECHAHASTA" length="200" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

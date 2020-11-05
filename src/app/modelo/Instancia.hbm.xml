@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-11-2020 20:26:54 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.modelo.Instancia" table="INSTANCIA" schema="SECUREPLUS" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="empresa" class="app.modelo.Empresa" fetch="select">
+            <column name="IDEMPRESA" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="estadoinstancia" class="app.modelo.Estadoinstancia" fetch="select">
+            <column name="IDESTADOINSTANCIA" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoinstancia" class="app.modelo.Tipoinstancia" fetch="select">
+            <column name="IDTIPOINSTANCIA" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="app.modelo.Usuario" fetch="select">
+            <column name="IDUSUARIO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="fechadesde" type="string">
+            <column name="FECHADESDE" length="20" not-null="true" />
+        </property>
+        <property name="fechahasta" type="string">
+            <column name="FECHAHASTA" length="20" not-null="true" />
+        </property>
+        <property name="tema" type="string">
+            <column name="TEMA" length="100" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="250" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="DIRECCION" length="250" not-null="true" />
+        </property>
+        <set name="checklists" table="CHECKLIST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDINSTANCIA" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="app.modelo.Checklist" />
+        </set>
+        <set name="registros" table="REGISTRO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDINSTANCIA" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="app.modelo.Registro" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-11-2020 20:26:54 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="app.modelo.Checklist" table="CHECKLIST" schema="SECUREPLUS" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="instancia" class="app.modelo.Instancia" fetch="select">
+            <column name="IDINSTANCIA" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="150" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="250" not-null="true" />
+        </property>
+        <set name="preguntas" table="PREGUNTA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDCHECKLIST" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="app.modelo.Pregunta" />
+        </set>
+    </class>
+</hibernate-mapping>
