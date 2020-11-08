@@ -13,8 +13,14 @@ import app.vista.*;
 public class GestionMain {
     
     UIIniciarSesion login;
+    Controlador control;
+    
+    
     public GestionMain(){
         login = new UIIniciarSesion();
+        control  = new Controlador(login);
+        login.setVisible(true);
+        login.setLocationRelativeTo(login);
     }
     
     public static void main(String[] args) {

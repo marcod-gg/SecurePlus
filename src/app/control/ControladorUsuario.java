@@ -23,6 +23,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -30,6 +31,7 @@ import org.hibernate.Transaction;
  */
 public class ControladorUsuario implements ActionListener{
 
+    Usuario sign;
     Usuario usuario;
     Empresa empresa;
     Rol rol;
@@ -38,19 +40,26 @@ public class ControladorUsuario implements ActionListener{
     BigDecimal bigdecimal;
     
     UIMenu1 menu = new UIMenu1();
+    
+    
     DefaultTableModel dtm = new DefaultTableModel();
     
     ControladorEmpresa cemp = new ControladorEmpresa();
     ControladorRol crol = new ControladorRol();
     ControladorEstado cest = new ControladorEstado();
     
-    public ControladorUsuario(UIMenu1 m) {
-        this.menu=m;
+    public ControladorUsuario(Usuario u, UIMenu1 m) {
+        this.sign = u;
+        this.menu = m;
         this.menu.btnListarUsuarios.addActionListener(this);
         this.menu.btnGuardarUsuario.addActionListener(this);
         this.menu.btnEditarUsuario.addActionListener(this);
         this.menu.btnUserActualizar.addActionListener(this);
         this.menu.btnEliminarUsuario.addActionListener(this);
+                
+        menu.btnUser.setText(sign.getNombres());
+        
+        menu.setLocationRelativeTo(menu);
     }
     
     @Override
@@ -247,7 +256,6 @@ public class ControladorUsuario implements ActionListener{
     
     //CRUD - CRUD - CRUD - CRUD - CRUD - CRUD - CRUD - CRUD - CRUD - CRUD - CRUD - CRUD
     
-    
     //Limpiar tabla con lista de usuarios.
     public void limpiarTabla(){
         for (int i = 0; i < menu.tblUsuario.getRowCount(); i++) {
@@ -277,8 +285,6 @@ public class ControladorUsuario implements ActionListener{
 	    
 	return sb.toString();
     }
-    
-
 
     //Funcion que permite llenar el combobox de "editar"
     private void cargaDatosComboBox(BigDecimal id) {

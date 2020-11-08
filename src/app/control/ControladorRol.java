@@ -6,16 +6,10 @@
 package app.control;
 
 import java.math.BigDecimal;
-import java.util.Iterator;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import app.vista.*;
 import app.modelo.*;
 /**
  *

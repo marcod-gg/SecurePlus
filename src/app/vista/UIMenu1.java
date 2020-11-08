@@ -1,10 +1,8 @@
 
 package app.vista;
 
-import app.control.ControladorUsuario;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import app.vista.*;
 
 
 public final class UIMenu1 extends javax.swing.JFrame {
@@ -27,6 +25,15 @@ public final class UIMenu1 extends javax.swing.JFrame {
         pEditarUsuario.setVisible(false);
         panel.setVisible(true);
     }
+    
+    public void verMenu(JPanel panel){
+        int pos = panel.getY();
+        if (pos < 0) {
+            Animacion.Animacion.bajar(-1000, 70 , 0, 2, panel);
+        }else{
+            Animacion.Animacion.subir(70, -1000, 0, 2, panel);
+        }
+    }
 
     
     @SuppressWarnings("unchecked")
@@ -46,7 +53,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         pnlCliente = new javax.swing.JPanel();
         btnRepAcc = new javax.swing.JButton();
         btnAseEsp = new javax.swing.JButton();
-        pnlMantenedores = new javax.swing.JPanel();
+        pnlProfes = new javax.swing.JPanel();
         btnCapacitaciones = new javax.swing.JButton();
         btnVisitas = new javax.swing.JButton();
         btnCliente2 = new javax.swing.JButton();
@@ -66,6 +73,8 @@ public final class UIMenu1 extends javax.swing.JFrame {
         btnProf = new javax.swing.JButton();
         pnlNotify = new javax.swing.JPanel();
         pnlSesion = new javax.swing.JPanel();
+        btnMiPerfil = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         pAgregarUsuario = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -140,104 +149,125 @@ public final class UIMenu1 extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(37, 35, 35));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/splogo_1.png"))); // NOI18N
+        jLabel2.setPreferredSize(new java.awt.Dimension(250, 70));
+        jLabel2.setRequestFocusEnabled(false);
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, -1));
 
-        btnInicio.setText("jButton1");
+        btnInicio.setBackground(new java.awt.Color(37, 35, 35));
+        btnInicio.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnInicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnInicio.setText("INICIO");
+        btnInicio.setBorder(null);
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicioActionPerformed(evt);
             }
         });
+        jPanel2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 200, 70));
 
-        btnCliente.setText("jButton2");
+        btnCliente.setBackground(new java.awt.Color(37, 35, 35));
+        btnCliente.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnCliente.setText("CLIENTE");
+        btnCliente.setBorder(null);
+        btnCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClienteMouseClicked(evt);
+            }
+        });
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
             }
         });
+        jPanel2.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 200, 70));
 
-        btnProfes.setText("jButton3");
+        btnProfes.setBackground(new java.awt.Color(37, 35, 35));
+        btnProfes.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnProfes.setForeground(new java.awt.Color(255, 255, 255));
+        btnProfes.setText("PROFESIONAL");
+        btnProfes.setBorder(null);
+        btnProfes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProfesMouseClicked(evt);
+            }
+        });
         btnProfes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProfesActionPerformed(evt);
             }
         });
+        jPanel2.add(btnProfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 200, 70));
 
-        btnInformes.setText("jButton4");
+        btnInformes.setBackground(new java.awt.Color(37, 35, 35));
+        btnInformes.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnInformes.setForeground(new java.awt.Color(255, 255, 255));
+        btnInformes.setText("INFORMES");
+        btnInformes.setBorder(null);
+        btnInformes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInformesMouseClicked(evt);
+            }
+        });
         btnInformes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInformesActionPerformed(evt);
             }
         });
+        jPanel2.add(btnInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 200, 70));
 
-        btnAdmin.setText("jButton5");
+        btnAdmin.setBackground(new java.awt.Color(37, 35, 35));
+        btnAdmin.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdmin.setText("ADMINISTRADOR");
+        btnAdmin.setBorder(null);
+        btnAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAdminMouseClicked(evt);
+            }
+        });
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdminActionPerformed(evt);
             }
         });
+        jPanel2.add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, 200, 70));
 
-        btnUser.setText("jButton6");
+        btnUser.setBackground(new java.awt.Color(37, 35, 35));
+        btnUser.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnUser.setForeground(new java.awt.Color(255, 255, 255));
+        btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/user_1.png"))); // NOI18N
+        btnUser.setText("SesionUsuario");
+        btnUser.setBorder(null);
+        btnUser.setPreferredSize(new java.awt.Dimension(200, 70));
         btnUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUserActionPerformed(evt);
             }
         });
+        jPanel2.add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 0, -1, -1));
 
-        btnNotify.setText("jButton7");
+        btnNotify.setBackground(new java.awt.Color(37, 35, 35));
+        btnNotify.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnNotify.setForeground(new java.awt.Color(255, 255, 255));
+        btnNotify.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/campana_1.png"))); // NOI18N
+        btnNotify.setBorder(null);
+        btnNotify.setPreferredSize(new java.awt.Dimension(70, 70));
         btnNotify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNotifyActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(btnInicio)
-                .addGap(91, 91, 91)
-                .addComponent(btnCliente)
-                .addGap(89, 89, 89)
-                .addComponent(btnProfes)
-                .addGap(104, 104, 104)
-                .addComponent(btnInformes)
-                .addGap(92, 92, 92)
-                .addComponent(btnAdmin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 545, Short.MAX_VALUE)
-                .addComponent(btnNotify)
-                .addGap(56, 56, 56)
-                .addComponent(btnUser)
-                .addGap(34, 34, 34))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInicio)
-                    .addComponent(btnCliente)
-                    .addComponent(btnProfes)
-                    .addComponent(btnInformes)
-                    .addComponent(btnAdmin)
-                    .addComponent(btnUser)
-                    .addComponent(btnNotify))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel2.add(btnNotify, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 0, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 70));
 
         pnlCliente.setBackground(new java.awt.Color(37, 35, 35));
-        pnlCliente.setPreferredSize(new java.awt.Dimension(200, 230));
+        pnlCliente.setPreferredSize(new java.awt.Dimension(200, 150));
+        pnlCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRepAcc.setBackground(new java.awt.Color(37, 35, 35));
         btnRepAcc.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -249,43 +279,26 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnRepAccActionPerformed(evt);
             }
         });
+        pnlCliente.add(btnRepAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 70));
 
         btnAseEsp.setBackground(new java.awt.Color(37, 35, 35));
         btnAseEsp.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         btnAseEsp.setForeground(new java.awt.Color(255, 255, 255));
         btnAseEsp.setText("Solicitar Asesoría Especial");
         btnAseEsp.setBorder(null);
+        btnAseEsp.setPreferredSize(new java.awt.Dimension(180, 30));
         btnAseEsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAseEspActionPerformed(evt);
             }
         });
+        pnlCliente.add(btnAseEsp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 70));
 
-        javax.swing.GroupLayout pnlClienteLayout = new javax.swing.GroupLayout(pnlCliente);
-        pnlCliente.setLayout(pnlClienteLayout);
-        pnlClienteLayout.setHorizontalGroup(
-            pnlClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-            .addGroup(pnlClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(btnRepAcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAseEsp, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-        );
-        pnlClienteLayout.setVerticalGroup(
-            pnlClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 231, Short.MAX_VALUE)
-            .addGroup(pnlClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlClienteLayout.createSequentialGroup()
-                    .addGap(81, 81, 81)
-                    .addComponent(btnRepAcc, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(btnAseEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        jPanel1.add(pnlCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, -1000, -1, -1));
 
-        jPanel1.add(pnlCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, -250, -1, -1));
-
-        pnlMantenedores.setBackground(new java.awt.Color(37, 35, 35));
-        pnlMantenedores.setPreferredSize(new java.awt.Dimension(200, 530));
+        pnlProfes.setBackground(new java.awt.Color(37, 35, 35));
+        pnlProfes.setPreferredSize(new java.awt.Dimension(200, 430));
+        pnlProfes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCapacitaciones.setBackground(new java.awt.Color(37, 35, 35));
         btnCapacitaciones.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -297,6 +310,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnCapacitacionesActionPerformed(evt);
             }
         });
+        pnlProfes.add(btnCapacitaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 70));
 
         btnVisitas.setBackground(new java.awt.Color(37, 35, 35));
         btnVisitas.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -308,12 +322,19 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnVisitasActionPerformed(evt);
             }
         });
+        pnlProfes.add(btnVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 70));
 
         btnCliente2.setBackground(new java.awt.Color(37, 35, 35));
         btnCliente2.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnCliente2.setForeground(new java.awt.Color(255, 255, 255));
         btnCliente2.setText("Clientes");
         btnCliente2.setBorder(null);
+        btnCliente2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCliente2ActionPerformed(evt);
+            }
+        });
+        pnlProfes.add(btnCliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 200, 70));
 
         btnAsesorias.setBackground(new java.awt.Color(37, 35, 35));
         btnAsesorias.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -326,6 +347,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnAsesoriasActionPerformed(evt);
             }
         });
+        pnlProfes.add(btnAsesorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 200, 70));
 
         btnChecklist.setBackground(new java.awt.Color(37, 35, 35));
         btnChecklist.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -337,6 +359,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnChecklistActionPerformed(evt);
             }
         });
+        pnlProfes.add(btnChecklist, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 200, 70));
 
         btnMejoras.setBackground(new java.awt.Color(37, 35, 35));
         btnMejoras.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -348,68 +371,48 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnMejorasActionPerformed(evt);
             }
         });
+        pnlProfes.add(btnMejoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 200, 70));
 
-        javax.swing.GroupLayout pnlMantenedoresLayout = new javax.swing.GroupLayout(pnlMantenedores);
-        pnlMantenedores.setLayout(pnlMantenedoresLayout);
-        pnlMantenedoresLayout.setHorizontalGroup(
-            pnlMantenedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnChecklist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnMejoras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAsesorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCliente2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnVisitas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCapacitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-        );
-        pnlMantenedoresLayout.setVerticalGroup(
-            pnlMantenedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlMantenedoresLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addComponent(btnCapacitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAsesorias, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnChecklist, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnMejoras, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(pnlMantenedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(696, -530, 200, 530));
+        jPanel1.add(pnlProfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, -1000, -1, -1));
 
         pnlInformes.setBackground(new java.awt.Color(37, 35, 35));
-        pnlInformes.setPreferredSize(new java.awt.Dimension(200, 530));
+        pnlInformes.setMinimumSize(new java.awt.Dimension(200, 490));
+        pnlInformes.setPreferredSize(new java.awt.Dimension(200, 430));
+        pnlInformes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnPagoClientes.setBackground(new java.awt.Color(37, 35, 35));
         btnPagoClientes.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnPagoClientes.setForeground(new java.awt.Color(255, 255, 255));
         btnPagoClientes.setText("Pago Clientes");
         btnPagoClientes.setBorder(null);
+        btnPagoClientes.setPreferredSize(new java.awt.Dimension(200, 70));
         btnPagoClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPagoClientesActionPerformed(evt);
             }
         });
+        pnlInformes.add(btnPagoClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         btnInfoAcc.setBackground(new java.awt.Color(37, 35, 35));
         btnInfoAcc.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         btnInfoAcc.setForeground(new java.awt.Color(255, 255, 255));
         btnInfoAcc.setText("Informe Accidentabilidad");
         btnInfoAcc.setBorder(null);
+        btnInfoAcc.setPreferredSize(new java.awt.Dimension(200, 70));
         btnInfoAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInfoAccActionPerformed(evt);
             }
         });
+        pnlInformes.add(btnInfoAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
 
         btnActividades.setBackground(new java.awt.Color(37, 35, 35));
         btnActividades.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnActividades.setForeground(new java.awt.Color(255, 255, 255));
         btnActividades.setText("Actividades");
         btnActividades.setBorder(null);
+        btnActividades.setPreferredSize(new java.awt.Dimension(200, 70));
+        pnlInformes.add(btnActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
         btnAtrasos.setBackground(new java.awt.Color(37, 35, 35));
         btnAtrasos.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -418,62 +421,45 @@ public final class UIMenu1 extends javax.swing.JFrame {
         btnAtrasos.setToolTipText("");
         btnAtrasos.setActionCommand("Capacitaciones");
         btnAtrasos.setBorder(null);
+        btnAtrasos.setPreferredSize(new java.awt.Dimension(200, 70));
         btnAtrasos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtrasosActionPerformed(evt);
             }
         });
+        pnlInformes.add(btnAtrasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
         btnRepCliente.setBackground(new java.awt.Color(37, 35, 35));
         btnRepCliente.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnRepCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnRepCliente.setText("Reporte Cliente");
         btnRepCliente.setBorder(null);
+        btnRepCliente.setPreferredSize(new java.awt.Dimension(200, 70));
         btnRepCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRepClienteActionPerformed(evt);
             }
         });
+        pnlInformes.add(btnRepCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
 
         btnRepGlobal.setBackground(new java.awt.Color(37, 35, 35));
         btnRepGlobal.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnRepGlobal.setForeground(new java.awt.Color(255, 255, 255));
         btnRepGlobal.setText("Reporte Global");
         btnRepGlobal.setBorder(null);
+        btnRepGlobal.setPreferredSize(new java.awt.Dimension(200, 70));
+        btnRepGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRepGlobalActionPerformed(evt);
+            }
+        });
+        pnlInformes.add(btnRepGlobal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
 
-        javax.swing.GroupLayout pnlInformesLayout = new javax.swing.GroupLayout(pnlInformes);
-        pnlInformes.setLayout(pnlInformesLayout);
-        pnlInformesLayout.setHorizontalGroup(
-            pnlInformesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnRepCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnRepGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAtrasos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnActividades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnInfoAcc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-            .addComponent(btnPagoClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        pnlInformesLayout.setVerticalGroup(
-            pnlInformesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlInformesLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addComponent(btnPagoClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnInfoAcc, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnActividades, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAtrasos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRepGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(pnlInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(908, -530, 200, 530));
+        jPanel1.add(pnlInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, -1000, -1, -1));
 
         pnlAdmin.setBackground(new java.awt.Color(37, 35, 35));
-        pnlAdmin.setPreferredSize(new java.awt.Dimension(200, 300));
+        pnlAdmin.setPreferredSize(new java.awt.Dimension(200, 220));
+        pnlAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnUsuarios.setBackground(new java.awt.Color(37, 35, 35));
         btnUsuarios.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -485,6 +471,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnUsuariosActionPerformed(evt);
             }
         });
+        pnlAdmin.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 70));
 
         btnCliente3.setBackground(new java.awt.Color(37, 35, 35));
         btnCliente3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -496,6 +483,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnCliente3ActionPerformed(evt);
             }
         });
+        pnlAdmin.add(btnCliente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 70));
 
         btnProf.setBackground(new java.awt.Color(37, 35, 35));
         btnProf.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -507,28 +495,9 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnProfActionPerformed(evt);
             }
         });
+        pnlAdmin.add(btnProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 200, 70));
 
-        javax.swing.GroupLayout pnlAdminLayout = new javax.swing.GroupLayout(pnlAdmin);
-        pnlAdmin.setLayout(pnlAdminLayout);
-        pnlAdminLayout.setHorizontalGroup(
-            pnlAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnCliente3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnProf, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-            .addComponent(btnUsuarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        pnlAdminLayout.setVerticalGroup(
-            pnlAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAdminLayout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
-                .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnProf, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(pnlAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, -300, -1, -1));
+        jPanel1.add(pnlAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, -1000, -1, -1));
 
         pnlNotify.setBackground(new java.awt.Color(37, 35, 35));
 
@@ -547,19 +516,33 @@ public final class UIMenu1 extends javax.swing.JFrame {
 
         pnlSesion.setBackground(new java.awt.Color(37, 35, 35));
         pnlSesion.setPreferredSize(new java.awt.Dimension(150, 300));
+        pnlSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout pnlSesionLayout = new javax.swing.GroupLayout(pnlSesion);
-        pnlSesion.setLayout(pnlSesionLayout);
-        pnlSesionLayout.setHorizontalGroup(
-            pnlSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        pnlSesionLayout.setVerticalGroup(
-            pnlSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        btnMiPerfil.setBackground(new java.awt.Color(37, 35, 35));
+        btnMiPerfil.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnMiPerfil.setForeground(new java.awt.Color(255, 255, 255));
+        btnMiPerfil.setText("Mi perfil");
+        btnMiPerfil.setBorder(null);
+        btnMiPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMiPerfilActionPerformed(evt);
+            }
+        });
+        pnlSesion.add(btnMiPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 70));
 
-        jPanel1.add(pnlSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1662, -300, 200, 300));
+        btnCerrarSesion.setBackground(new java.awt.Color(37, 35, 35));
+        btnCerrarSesion.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.setBorder(null);
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        pnlSesion.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 70));
+
+        jPanel1.add(pnlSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1662, -1000, 200, 300));
 
         pAgregarUsuario.setBackground(new java.awt.Color(255, 255, 255));
         pAgregarUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1089,32 +1072,19 @@ public final class UIMenu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUserActionPerformed
 
     private void btnProfesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfesMouseClicked
-        int pos = this.pnlMantenedores.getY();
-        if (pos < 0) {
-            Animacion.Animacion.bajar(-530, 0, 1, 2, pnlMantenedores);
-        }
-        
+        verMenu(pnlProfes);
     }//GEN-LAST:event_btnProfesMouseClicked
 
     private void btnClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteMouseClicked
-        int pos = this.pnlCliente.getY();
-        if (pos < 0) {
-            Animacion.Animacion.bajar(-300, 0, 1, 2, pnlCliente);
-        }
+        verMenu(pnlCliente);
     }//GEN-LAST:event_btnClienteMouseClicked
 
     private void btnNotifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNotifyMouseClicked
-        int pos = this.pnlNotify.getY();
-        if (pos < 0) {
-            Animacion.Animacion.bajar(-300, 0, 1, 2, pnlNotify);
-        }
+        verMenu(pnlNotify);
     }//GEN-LAST:event_btnNotifyMouseClicked
 
     private void btnUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUserMouseClicked
-        int pos = this.pnlSesion.getY();
-        if (pos < 0) {
-            Animacion.Animacion.bajar(-300, 0, 1, 2, pnlSesion);
-        }
+        verMenu(pnlSesion);
     }//GEN-LAST:event_btnUserMouseClicked
 
     private void btnChecklistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChecklistActionPerformed
@@ -1126,7 +1096,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAsesoriasActionPerformed
 
     private void btnAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMouseClicked
-        // TODO add your handling code here:
+        verMenu(pnlAdmin);
     }//GEN-LAST:event_btnAdminMouseClicked
 
     private void btnAdminMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMousePressed
@@ -1134,17 +1104,11 @@ public final class UIMenu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdminMousePressed
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
-        int pos = this.pnlAdmin.getY();
-        if (pos < 0) {
-            Animacion.Animacion.bajar(-300, 0, 1, 2, pnlAdmin);
-        }
+      
     }//GEN-LAST:event_btnAdminActionPerformed
 
     private void btnInformesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseClicked
-        int pos = this.pnlInformes.getY();
-        if (pos < 0) {
-            Animacion.Animacion.bajar(-530, 0, 1, 2, pnlInformes);
-        }
+        verMenu(pnlInformes);
     }//GEN-LAST:event_btnInformesMouseClicked
 
     private void btnInformesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMousePressed
@@ -1249,12 +1213,25 @@ public final class UIMenu1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUserActualizarActionPerformed
 
+    private void btnRepGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRepGlobalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRepGlobalActionPerformed
+
+    private void btnCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCliente2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCliente2ActionPerformed
+
+    private void btnMiPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMiPerfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMiPerfilActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
     
     public static void main(String args[]) {
-        UIMenu1 menu = new UIMenu1();
-        ControladorUsuario cusuario = new ControladorUsuario(menu);
-        menu.setVisible(true);
-        menu.setLocationRelativeTo(menu);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1267,6 +1244,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
     private javax.swing.JButton btnCapacitaciones;
     private javax.swing.JButton btnCerrar1;
     private javax.swing.JButton btnCerrar2;
+    private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnChecklist;
     private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnCliente2;
@@ -1280,6 +1258,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
     public javax.swing.JButton btnLimpiarUsuario;
     public javax.swing.JButton btnListarUsuarios;
     private javax.swing.JButton btnMejoras;
+    private javax.swing.JButton btnMiPerfil;
     private javax.swing.JButton btnNotify;
     private javax.swing.JButton btnPagoClientes;
     private javax.swing.JButton btnProf;
@@ -1287,7 +1266,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
     private javax.swing.JButton btnRepAcc;
     private javax.swing.JButton btnRepCliente;
     private javax.swing.JButton btnRepGlobal;
-    private javax.swing.JButton btnUser;
+    public javax.swing.JButton btnUser;
     public javax.swing.JButton btnUserActualizar;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVisitas;
@@ -1338,8 +1317,8 @@ public final class UIMenu1 extends javax.swing.JFrame {
     private javax.swing.JPanel pnlAdmin;
     private javax.swing.JPanel pnlCliente;
     private javax.swing.JPanel pnlInformes;
-    private javax.swing.JPanel pnlMantenedores;
     private javax.swing.JPanel pnlNotify;
+    private javax.swing.JPanel pnlProfes;
     private javax.swing.JPanel pnlSesion;
     public javax.swing.JTable tblUsuario;
     public javax.swing.JTextField txtUserAMat;

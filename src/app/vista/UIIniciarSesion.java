@@ -122,7 +122,7 @@ public class UIIniciarSesion extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIniciarSesion;
+    public javax.swing.JButton btnIniciarSesion;
     private javax.swing.JCheckBox chkRecordar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -130,7 +130,7 @@ public class UIIniciarSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel pnlLogin;
-    private javax.swing.JTextField txtPass;
-    private javax.swing.JTextField txtUser;
+    public javax.swing.JTextField txtPass;
+    public javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }
