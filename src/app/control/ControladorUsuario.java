@@ -23,7 +23,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -50,31 +49,39 @@ public class ControladorUsuario implements ActionListener{
     
     public ControladorUsuario(Usuario u, UIMenu1 m) {
         this.sign = u;
-        this.menu = m;
-        this.menu.btnListarUsuarios.addActionListener(this);
+        this.menu = m;  
         this.menu.btnGuardarUsuario.addActionListener(this);
         this.menu.btnEditarUsuario.addActionListener(this);
         this.menu.btnUserActualizar.addActionListener(this);
         this.menu.btnEliminarUsuario.addActionListener(this);
+        this.menu.btnAgregarUsuario.addActionListener(this);
+        this.menu.btnSalir.addActionListener(this);
+        this.menu.btnUsuarios.addActionListener(this);
                 
         menu.btnUser.setText(sign.getNombres());
-        
         menu.setLocationRelativeTo(menu);
+        
+        
+        
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        //Accionar boton "Listar"
-        if(ae.getSource()==menu.btnListarUsuarios){
-            limpiarTabla();
-            listarUsuarios(menu.tblUsuario);
+        //Accionar boton "Agregar Usuario"
+        if (ae.getSource()==menu.btnAgregarUsuario) {
+            menu.pAgregarUsuario.setVisible(true);
+            menu.pAdminUsers.setVisible(false);
+            menu.txtUserPass.setEnabled(false);
+            menu.cbxUserEstado.setSelectedIndex(1);
+            menu.cbxUserEstado.setEnabled(false);
+            limpiaDatosComboBoxAgregar();
         }
+
         
         //Accionar boton "Guardar" dentro del menú Agregar        
         if(ae.getSource()==menu.btnGuardarUsuario){
             agregarUsuario();
-            limpiarTabla();
             listarUsuarios(menu.tblUsuario);
             menu.pAgregarUsuario.setVisible(false);
             menu.pAdminUsers.setVisible(true);
@@ -91,7 +98,7 @@ public class ControladorUsuario implements ActionListener{
                 bigdecimal = new BigDecimal(""+menu.tblUsuario.getValueAt(fila, 0));
                 
                 //Se entrega BigDecimal a funcion de cargaDatos
-                cargaDatosComboBox(bigdecimal);
+                cargaDatosComboBoxEditar(bigdecimal);
                 
                 //Se cambian paneles de edición
                 menu.pEditarUsuario.setVisible(true);
@@ -103,11 +110,23 @@ public class ControladorUsuario implements ActionListener{
         //Accionar boton "Actualizar" en menú editar
         if(ae.getSource()==menu.btnUserActualizar){
             actualizarUsuario();
-            limpiarTabla();
             listarUsuarios(menu.tblUsuario);
             menu.pEditarUsuario.setVisible(false);
             menu.pAdminUsers.setVisible(true);
         }
+        
+        //Accionar boton "Actualizar" en menú editar
+        if(ae.getSource()==menu.btnSalir){
+            int opcion = JOptionPane.showConfirmDialog(this.menu, "¿Realmente desea salir?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (opcion == JOptionPane.YES_OPTION){
+                System.exit(0);
+            }
+        }
+        
+        if(ae.getSource()==menu.btnUsuarios){
+            listarUsuarios(menu.tblUsuario);
+        }
+        
         
     }
     
@@ -165,6 +184,8 @@ public class ControladorUsuario implements ActionListener{
     
     //READ ALL
     public void listarUsuarios(JTable t){
+        
+        limpiarTabla();
         
         //Se consultan datos y se reservan en una lista.
         SessionFactory sesion = NewHibernateUtil.getSessionFactory();
@@ -287,7 +308,7 @@ public class ControladorUsuario implements ActionListener{
     }
 
     //Funcion que permite llenar el combobox de "editar"
-    private void cargaDatosComboBox(BigDecimal id) {
+    private void cargaDatosComboBoxEditar(BigDecimal id) {
 
         //Se usa función buscarUsuario() para obtener datos a editar
         usuario = buscarUsuario(id);
@@ -304,5 +325,20 @@ public class ControladorUsuario implements ActionListener{
         menu.cbxUserRol1.setSelectedIndex(usuario.getRol().getId().intValueExact());
         menu.cbxUserEstado1.setSelectedIndex(usuario.getEstado().getId().intValueExact());
         menu.cbxUserEmpresa1.setSelectedIndex(usuario.getEmpresa().getId().intValueExact());
+    }
+    
+    //Funcion que permite llenar el combobox de "editar"
+    private void limpiaDatosComboBoxAgregar() {
+        
+        menu.txtUserUser.setText("");
+        menu.txtUserName.setText("");
+        menu.txtUserPass.setText("");
+        menu.txtUserAPat.setText("");
+        menu.txtUserAMat.setText("");
+        menu.txtUserRut.setText("");
+        menu.txtUserMail.setText("");
+        menu.cbxUserRol.setSelectedIndex(0);
+        menu.cbxUserEstado.setSelectedIndex(1);
+        menu.cbxUserEmpresa.setSelectedIndex(0);
     }
 }

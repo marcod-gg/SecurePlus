@@ -17,8 +17,13 @@ public class GestionMain {
     
     
     public GestionMain(){
+        //iniciar UI de Login
         login = new UIIniciarSesion();
+        
+        //Se carga controlador principal
         control  = new Controlador(login);
+        
+        //hacer visible el login
         login.setVisible(true);
         login.setLocationRelativeTo(login);
     }

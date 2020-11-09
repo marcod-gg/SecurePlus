@@ -1,16 +1,37 @@
 
 package app.vista;
 
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
 public final class UIMenu1 extends javax.swing.JFrame {
-
+    
+//Crear colores de tema
+    Color colorPrimary = new Color(26,188,156);
+    Color colorSecondary = new Color(44,62,80);
+    Color colorSuccess = new Color(40,167,69);
+    Color colorInfo = new Color(23,162,184);
+    Color colorWarning = new Color(255,193,7);
+    Color colorDanger = new Color(220,53,69);
+    Color colorLight = new Color(248,249,250);
+    Color colorDark = new Color(52,58,64);
+    Color colorBtnAgregar = new Color(24,184,150);
+    Color colorFooter = new Color (27,37,47);
 
     public UIMenu1() {
+        //Iniciar Componentes
         initComponents();
+        
+        //Aplicación a pantalla completa
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        //Asignar fuente a tablas
+        tblUsuario.getTableHeader().setFont(new Font("Segoe UI Historic", 1, 16));
+        tblUsuario.getTableHeader().setBackground(colorDark);
+        tblUsuario.getTableHeader().setForeground(Color.white);
         
         VerPanel(pInicio);
         
@@ -75,6 +96,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         pnlSesion = new javax.swing.JPanel();
         btnMiPerfil = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         pAgregarUsuario = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -128,27 +150,28 @@ public final class UIMenu1 extends javax.swing.JFrame {
         lblUser18 = new javax.swing.JLabel();
         lblUser19 = new javax.swing.JLabel();
         pAdminUsers = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        btnListarUsuarios = new javax.swing.JButton();
         btnAgregarUsuario = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUsuario = new javax.swing.JTable();
         btnEditarUsuario = new javax.swing.JButton();
         btnEliminarUsuario = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         pInicio = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
+        footer = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(37, 35, 35));
+        jPanel2.setBackground(colorSecondary);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/splogo_1.png"))); // NOI18N
@@ -156,7 +179,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         jLabel2.setRequestFocusEnabled(false);
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, -1));
 
-        btnInicio.setBackground(new java.awt.Color(37, 35, 35));
+        btnInicio.setBackground(colorSecondary);
         btnInicio.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnInicio.setForeground(new java.awt.Color(255, 255, 255));
         btnInicio.setText("INICIO");
@@ -168,7 +191,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         jPanel2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 200, 70));
 
-        btnCliente.setBackground(new java.awt.Color(37, 35, 35));
+        btnCliente.setBackground(colorSecondary);
         btnCliente.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnCliente.setText("CLIENTE");
@@ -185,7 +208,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         jPanel2.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 200, 70));
 
-        btnProfes.setBackground(new java.awt.Color(37, 35, 35));
+        btnProfes.setBackground(colorSecondary);
         btnProfes.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnProfes.setForeground(new java.awt.Color(255, 255, 255));
         btnProfes.setText("PROFESIONAL");
@@ -202,7 +225,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         jPanel2.add(btnProfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 200, 70));
 
-        btnInformes.setBackground(new java.awt.Color(37, 35, 35));
+        btnInformes.setBackground(colorSecondary);
         btnInformes.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnInformes.setForeground(new java.awt.Color(255, 255, 255));
         btnInformes.setText("INFORMES");
@@ -219,7 +242,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         jPanel2.add(btnInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 200, 70));
 
-        btnAdmin.setBackground(new java.awt.Color(37, 35, 35));
+        btnAdmin.setBackground(colorSecondary);
         btnAdmin.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnAdmin.setText("ADMINISTRADOR");
@@ -236,7 +259,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         jPanel2.add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, 200, 70));
 
-        btnUser.setBackground(new java.awt.Color(37, 35, 35));
+        btnUser.setBackground(colorSecondary);
         btnUser.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnUser.setForeground(new java.awt.Color(255, 255, 255));
         btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/user_1.png"))); // NOI18N
@@ -250,7 +273,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         jPanel2.add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 0, -1, -1));
 
-        btnNotify.setBackground(new java.awt.Color(37, 35, 35));
+        btnNotify.setBackground(colorSecondary);
         btnNotify.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnNotify.setForeground(new java.awt.Color(255, 255, 255));
         btnNotify.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/campana_1.png"))); // NOI18N
@@ -265,11 +288,11 @@ public final class UIMenu1 extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 70));
 
-        pnlCliente.setBackground(new java.awt.Color(37, 35, 35));
+        pnlCliente.setBackground(colorSecondary);
         pnlCliente.setPreferredSize(new java.awt.Dimension(200, 150));
         pnlCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnRepAcc.setBackground(new java.awt.Color(37, 35, 35));
+        btnRepAcc.setBackground(colorSecondary);
         btnRepAcc.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnRepAcc.setForeground(new java.awt.Color(255, 255, 255));
         btnRepAcc.setText("Reportar \nAccidente");
@@ -281,7 +304,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlCliente.add(btnRepAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 70));
 
-        btnAseEsp.setBackground(new java.awt.Color(37, 35, 35));
+        btnAseEsp.setBackground(colorSecondary);
         btnAseEsp.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         btnAseEsp.setForeground(new java.awt.Color(255, 255, 255));
         btnAseEsp.setText("Solicitar Asesoría Especial");
@@ -296,11 +319,11 @@ public final class UIMenu1 extends javax.swing.JFrame {
 
         jPanel1.add(pnlCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, -1000, -1, -1));
 
-        pnlProfes.setBackground(new java.awt.Color(37, 35, 35));
+        pnlProfes.setBackground(colorSecondary);
         pnlProfes.setPreferredSize(new java.awt.Dimension(200, 430));
         pnlProfes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnCapacitaciones.setBackground(new java.awt.Color(37, 35, 35));
+        btnCapacitaciones.setBackground(colorSecondary);
         btnCapacitaciones.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnCapacitaciones.setForeground(new java.awt.Color(255, 255, 255));
         btnCapacitaciones.setText("Capacitaciones");
@@ -312,7 +335,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlProfes.add(btnCapacitaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 70));
 
-        btnVisitas.setBackground(new java.awt.Color(37, 35, 35));
+        btnVisitas.setBackground(colorSecondary);
         btnVisitas.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnVisitas.setForeground(new java.awt.Color(255, 255, 255));
         btnVisitas.setText("Visitas");
@@ -324,7 +347,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlProfes.add(btnVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 70));
 
-        btnCliente2.setBackground(new java.awt.Color(37, 35, 35));
+        btnCliente2.setBackground(colorSecondary);
         btnCliente2.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnCliente2.setForeground(new java.awt.Color(255, 255, 255));
         btnCliente2.setText("Clientes");
@@ -336,7 +359,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlProfes.add(btnCliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 200, 70));
 
-        btnAsesorias.setBackground(new java.awt.Color(37, 35, 35));
+        btnAsesorias.setBackground(colorSecondary);
         btnAsesorias.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnAsesorias.setForeground(new java.awt.Color(255, 255, 255));
         btnAsesorias.setText("Asesorias");
@@ -349,7 +372,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlProfes.add(btnAsesorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 200, 70));
 
-        btnChecklist.setBackground(new java.awt.Color(37, 35, 35));
+        btnChecklist.setBackground(colorSecondary);
         btnChecklist.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnChecklist.setForeground(new java.awt.Color(255, 255, 255));
         btnChecklist.setText("Checklist");
@@ -361,7 +384,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlProfes.add(btnChecklist, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 200, 70));
 
-        btnMejoras.setBackground(new java.awt.Color(37, 35, 35));
+        btnMejoras.setBackground(colorSecondary);
         btnMejoras.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnMejoras.setForeground(new java.awt.Color(255, 255, 255));
         btnMejoras.setText("Mejoras");
@@ -375,12 +398,12 @@ public final class UIMenu1 extends javax.swing.JFrame {
 
         jPanel1.add(pnlProfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, -1000, -1, -1));
 
-        pnlInformes.setBackground(new java.awt.Color(37, 35, 35));
+        pnlInformes.setBackground(colorSecondary);
         pnlInformes.setMinimumSize(new java.awt.Dimension(200, 490));
         pnlInformes.setPreferredSize(new java.awt.Dimension(200, 430));
         pnlInformes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnPagoClientes.setBackground(new java.awt.Color(37, 35, 35));
+        btnPagoClientes.setBackground(colorSecondary);
         btnPagoClientes.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnPagoClientes.setForeground(new java.awt.Color(255, 255, 255));
         btnPagoClientes.setText("Pago Clientes");
@@ -393,7 +416,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlInformes.add(btnPagoClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
-        btnInfoAcc.setBackground(new java.awt.Color(37, 35, 35));
+        btnInfoAcc.setBackground(colorSecondary);
         btnInfoAcc.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         btnInfoAcc.setForeground(new java.awt.Color(255, 255, 255));
         btnInfoAcc.setText("Informe Accidentabilidad");
@@ -406,7 +429,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlInformes.add(btnInfoAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
 
-        btnActividades.setBackground(new java.awt.Color(37, 35, 35));
+        btnActividades.setBackground(colorSecondary);
         btnActividades.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnActividades.setForeground(new java.awt.Color(255, 255, 255));
         btnActividades.setText("Actividades");
@@ -414,7 +437,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         btnActividades.setPreferredSize(new java.awt.Dimension(200, 70));
         pnlInformes.add(btnActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
-        btnAtrasos.setBackground(new java.awt.Color(37, 35, 35));
+        btnAtrasos.setBackground(colorSecondary);
         btnAtrasos.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnAtrasos.setForeground(new java.awt.Color(255, 255, 255));
         btnAtrasos.setText("Atrasos");
@@ -427,9 +450,9 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 btnAtrasosActionPerformed(evt);
             }
         });
-        pnlInformes.add(btnAtrasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
+        pnlInformes.add(btnAtrasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
 
-        btnRepCliente.setBackground(new java.awt.Color(37, 35, 35));
+        btnRepCliente.setBackground(colorSecondary);
         btnRepCliente.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnRepCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnRepCliente.setText("Reporte Cliente");
@@ -442,7 +465,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlInformes.add(btnRepCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
 
-        btnRepGlobal.setBackground(new java.awt.Color(37, 35, 35));
+        btnRepGlobal.setBackground(colorSecondary);
         btnRepGlobal.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnRepGlobal.setForeground(new java.awt.Color(255, 255, 255));
         btnRepGlobal.setText("Reporte Global");
@@ -457,11 +480,11 @@ public final class UIMenu1 extends javax.swing.JFrame {
 
         jPanel1.add(pnlInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, -1000, -1, -1));
 
-        pnlAdmin.setBackground(new java.awt.Color(37, 35, 35));
+        pnlAdmin.setBackground(colorSecondary);
         pnlAdmin.setPreferredSize(new java.awt.Dimension(200, 220));
         pnlAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnUsuarios.setBackground(new java.awt.Color(37, 35, 35));
+        btnUsuarios.setBackground(colorSecondary);
         btnUsuarios.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuarios.setText("Usuarios");
@@ -473,7 +496,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlAdmin.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 70));
 
-        btnCliente3.setBackground(new java.awt.Color(37, 35, 35));
+        btnCliente3.setBackground(colorSecondary);
         btnCliente3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnCliente3.setForeground(new java.awt.Color(255, 255, 255));
         btnCliente3.setText("Clientes");
@@ -485,7 +508,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         });
         pnlAdmin.add(btnCliente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 70));
 
-        btnProf.setBackground(new java.awt.Color(37, 35, 35));
+        btnProf.setBackground(colorSecondary);
         btnProf.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnProf.setForeground(new java.awt.Color(255, 255, 255));
         btnProf.setText("Profesionales");
@@ -499,7 +522,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
 
         jPanel1.add(pnlAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, -1000, -1, -1));
 
-        pnlNotify.setBackground(new java.awt.Color(37, 35, 35));
+        pnlNotify.setBackground(colorSecondary);
 
         javax.swing.GroupLayout pnlNotifyLayout = new javax.swing.GroupLayout(pnlNotify);
         pnlNotify.setLayout(pnlNotifyLayout);
@@ -514,35 +537,50 @@ public final class UIMenu1 extends javax.swing.JFrame {
 
         jPanel1.add(pnlNotify, new org.netbeans.lib.awtextra.AbsoluteConstraints(1450, -300, 200, 300));
 
-        pnlSesion.setBackground(new java.awt.Color(37, 35, 35));
-        pnlSesion.setPreferredSize(new java.awt.Dimension(150, 300));
+        pnlSesion.setBackground(colorSecondary);
+        pnlSesion.setPreferredSize(new java.awt.Dimension(200, 220));
         pnlSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnMiPerfil.setBackground(new java.awt.Color(37, 35, 35));
+        btnMiPerfil.setBackground(colorSecondary);
         btnMiPerfil.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnMiPerfil.setForeground(new java.awt.Color(255, 255, 255));
         btnMiPerfil.setText("Mi perfil");
         btnMiPerfil.setBorder(null);
+        btnMiPerfil.setPreferredSize(new java.awt.Dimension(200, 70));
         btnMiPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMiPerfilActionPerformed(evt);
             }
         });
-        pnlSesion.add(btnMiPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 70));
+        pnlSesion.add(btnMiPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
-        btnCerrarSesion.setBackground(new java.awt.Color(37, 35, 35));
+        btnCerrarSesion.setBackground(colorSecondary);
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnCerrarSesion.setText("Cerrar Sesión");
         btnCerrarSesion.setBorder(null);
+        btnCerrarSesion.setPreferredSize(new java.awt.Dimension(200, 70));
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        pnlSesion.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 200, 70));
+        pnlSesion.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
 
-        jPanel1.add(pnlSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1662, -1000, 200, 300));
+        btnSalir.setBackground(colorSecondary);
+        btnSalir.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
+        btnSalir.setPreferredSize(new java.awt.Dimension(200, 70));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        pnlSesion.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
+
+        jPanel1.add(pnlSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, -1000, -1, -1));
 
         pAgregarUsuario.setBackground(new java.awt.Color(255, 255, 255));
         pAgregarUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -883,59 +921,20 @@ public final class UIMenu1 extends javax.swing.JFrame {
         pAdminUsers.setBackground(new java.awt.Color(255, 255, 255));
         pAdminUsers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 121, 140)));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel5.setBackground(new java.awt.Color(112, 121, 140));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 121, 140)));
-        jPanel5.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel4.setBackground(new java.awt.Color(112, 121, 140));
-        jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("ADMINISTRADOR DE USUARIOS");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1786, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1820, 50));
-
-        btnListarUsuarios.setBackground(new java.awt.Color(92, 184, 92));
-        btnListarUsuarios.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        btnListarUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        btnListarUsuarios.setText("Listar Usuarios");
-        btnListarUsuarios.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnListarUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListarUsuariosActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnListarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 780, 220, 50));
-
-        btnAgregarUsuario.setBackground(new java.awt.Color(92, 184, 92));
+        btnAgregarUsuario.setBackground(colorBtnAgregar);
         btnAgregarUsuario.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnAgregarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarUsuario.setText("+ Agregar Nuevo");
-        btnAgregarUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAgregarUsuario.setBorder(null);
+        btnAgregarUsuario.setPreferredSize(new java.awt.Dimension(200, 60));
         btnAgregarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarUsuarioActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 220, 50));
+        pAdminUsers.add(btnAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 840, -1, -1));
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(1280, 700));
 
         tblUsuario.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         tblUsuario.setModel(new javax.swing.table.DefaultTableModel(
@@ -947,7 +946,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false, false
@@ -961,61 +960,101 @@ public final class UIMenu1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblUsuario.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblUsuario);
+        if (tblUsuario.getColumnModel().getColumnCount() > 0) {
+            tblUsuario.getColumnModel().getColumn(0).setMinWidth(10);
+            tblUsuario.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblUsuario.getColumnModel().getColumn(0).setMaxWidth(100);
+            tblUsuario.getColumnModel().getColumn(1).setMinWidth(10);
+            tblUsuario.getColumnModel().getColumn(1).setPreferredWidth(150);
+            tblUsuario.getColumnModel().getColumn(1).setMaxWidth(300);
+            tblUsuario.getColumnModel().getColumn(2).setMinWidth(10);
+            tblUsuario.getColumnModel().getColumn(2).setPreferredWidth(150);
+            tblUsuario.getColumnModel().getColumn(2).setMaxWidth(500);
+            tblUsuario.getColumnModel().getColumn(3).setMinWidth(10);
+            tblUsuario.getColumnModel().getColumn(3).setPreferredWidth(100);
+            tblUsuario.getColumnModel().getColumn(3).setMaxWidth(300);
+            tblUsuario.getColumnModel().getColumn(4).setMinWidth(10);
+            tblUsuario.getColumnModel().getColumn(4).setPreferredWidth(100);
+            tblUsuario.getColumnModel().getColumn(4).setMaxWidth(300);
+            tblUsuario.getColumnModel().getColumn(5).setPreferredWidth(100);
+            tblUsuario.getColumnModel().getColumn(6).setPreferredWidth(200);
+        }
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 1760, 620));
+        pAdminUsers.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, 700));
 
-        btnEditarUsuario.setBackground(new java.awt.Color(0, 204, 204));
+        btnEditarUsuario.setBackground(colorInfo);
         btnEditarUsuario.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnEditarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnEditarUsuario.setText("Editar Usuario");
         btnEditarUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEditarUsuario.setPreferredSize(new java.awt.Dimension(200, 60));
         btnEditarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarUsuarioActionPerformed(evt);
             }
         });
-        jPanel4.add(btnEditarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1570, 780, 130, 50));
+        pAdminUsers.add(btnEditarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 840, -1, -1));
 
-        btnEliminarUsuario.setBackground(new java.awt.Color(204, 51, 0));
+        btnEliminarUsuario.setBackground(colorDanger);
         btnEliminarUsuario.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         btnEliminarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarUsuario.setText("Eliminar");
         btnEliminarUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminarUsuario.setPreferredSize(new java.awt.Dimension(100, 60));
         btnEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarUsuarioActionPerformed(evt);
             }
         });
-        jPanel4.add(btnEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1710, 780, 80, 50));
+        pAdminUsers.add(btnEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 840, -1, -1));
 
-        pAdminUsers.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1820, 860));
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("USUARIOS");
+        pAdminUsers.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 1280, 50));
 
-        jPanel1.add(pAdminUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jPanel1.add(pAdminUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1920, 970));
 
         pInicio.setBackground(new java.awt.Color(255, 255, 255));
-        pInicio.setPreferredSize(new java.awt.Dimension(1860, 910));
+        pInicio.setPreferredSize(new java.awt.Dimension(1840, 880));
         pInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/SP-portada_1.png"))); // NOI18N
-        pInicio.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, -6, 1870, 920));
+        pInicio.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, -6, 1930, 980));
 
-        jPanel1.add(pInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jPanel1.add(pInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1920, 970));
+
+        container.setBackground(new java.awt.Color(255, 255, 255));
+        container.setPreferredSize(new java.awt.Dimension(1840, 880));
 
         javax.swing.GroupLayout containerLayout = new javax.swing.GroupLayout(container);
         container.setLayout(containerLayout);
         containerLayout.setHorizontalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1860, Short.MAX_VALUE)
+            .addGap(0, 1920, Short.MAX_VALUE)
         );
         containerLayout.setVerticalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 910, Short.MAX_VALUE)
+            .addGap(0, 970, Short.MAX_VALUE)
         );
 
-        jPanel1.add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 1860, 910));
+        jPanel1.add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1920, 970));
+
+        footer.setBackground(colorFooter);
+        footer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(colorFooter);
+        jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Copyright © Secure Plus 2020");
+        footer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1900, 30));
+
+        jPanel1.add(footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1040, 1920, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1068,7 +1107,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUserMousePressed
 
     private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
-
+        verMenu(pnlSesion);
     }//GEN-LAST:event_btnUserActionPerformed
 
     private void btnProfesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfesMouseClicked
@@ -1163,20 +1202,12 @@ public final class UIMenu1 extends javax.swing.JFrame {
             
     }//GEN-LAST:event_btnProfActionPerformed
 
-    private void btnListarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarUsuariosActionPerformed
-        
-    }//GEN-LAST:event_btnListarUsuariosActionPerformed
-
     private void btnMejorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMejorasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMejorasActionPerformed
 
     private void btnAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioActionPerformed
-        pAgregarUsuario.setVisible(true);
-        pAdminUsers.setVisible(false);
-        txtUserPass.setEnabled(false);
-        cbxUserEstado.setSelectedIndex(1);
-        cbxUserEstado.setEnabled(false);
+        
     }//GEN-LAST:event_btnAgregarUsuarioActionPerformed
 
     private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
@@ -1229,10 +1260,10 @@ public final class UIMenu1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
-    
-    public static void main(String args[]) {
-        
-    }
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActividades;
@@ -1256,7 +1287,6 @@ public final class UIMenu1 extends javax.swing.JFrame {
     private javax.swing.JButton btnInformes;
     private javax.swing.JButton btnInicio;
     public javax.swing.JButton btnLimpiarUsuario;
-    public javax.swing.JButton btnListarUsuarios;
     private javax.swing.JButton btnMejoras;
     private javax.swing.JButton btnMiPerfil;
     private javax.swing.JButton btnNotify;
@@ -1266,9 +1296,10 @@ public final class UIMenu1 extends javax.swing.JFrame {
     private javax.swing.JButton btnRepAcc;
     private javax.swing.JButton btnRepCliente;
     private javax.swing.JButton btnRepGlobal;
+    public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnUser;
     public javax.swing.JButton btnUserActualizar;
-    private javax.swing.JButton btnUsuarios;
+    public javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVisitas;
     public javax.swing.JComboBox<String> cbxUserEmpresa;
     public javax.swing.JComboBox<String> cbxUserEmpresa1;
@@ -1277,6 +1308,8 @@ public final class UIMenu1 extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cbxUserRol;
     public javax.swing.JComboBox<String> cbxUserRol1;
     private javax.swing.JPanel container;
+    private javax.swing.JPanel footer;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1284,8 +1317,6 @@ public final class UIMenu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1336,4 +1367,6 @@ public final class UIMenu1 extends javax.swing.JFrame {
     public javax.swing.JTextField txtUserUser;
     public javax.swing.JTextField txtUserUser1;
     // End of variables declaration//GEN-END:variables
+
+   
 }

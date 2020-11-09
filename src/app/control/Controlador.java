@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -29,10 +30,11 @@ public class Controlador  implements ActionListener{
     String user;
     String pass;
     
-    UIIniciarSesion login = new UIIniciarSesion();
+    UIIniciarSesion login;
     
     public Controlador(UIIniciarSesion log) {
         
+        //Rescatar UI de Login
         this.login=log;
         this.login.btnIniciarSesion.addActionListener(this);
     }
@@ -43,7 +45,7 @@ public class Controlador  implements ActionListener{
             user = login.txtUser.getText();
             pass = passToSHA256(login.txtPass.getText());
             if (iniciarSesion(user, pass)) {
-                login.hide();
+                login.setVisible(false);
             }
         }
     }
@@ -67,6 +69,7 @@ public class Controlador  implements ActionListener{
                 UIMenu1 menu = new UIMenu1();
                 ControladorUsuario cusuario = new ControladorUsuario(usuario, menu);
                 menu.setVisible(true);
+                
                 menu.setLocationRelativeTo(menu);
                 return true;
             }else{
