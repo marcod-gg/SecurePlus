@@ -52,7 +52,6 @@ public class UIIniciarSesion extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(400, 500));
         setMinimumSize(new java.awt.Dimension(400, 500));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(400, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlLogin.setBackground(colorPrimary);

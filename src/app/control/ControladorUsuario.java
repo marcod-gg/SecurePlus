@@ -30,23 +30,25 @@ import org.hibernate.Transaction;
  */
 public class ControladorUsuario implements ActionListener{
 
-    Usuario sign;
-    Usuario usuario;
+    //Definir variables a utilizar
+    Usuario sign, usuario;
     Empresa empresa;
     Rol rol;
     Estado estado;
-    
     BigDecimal bigdecimal;
     
-    UIMenu1 menu = new UIMenu1();
+    //Definir variable de Interfaz Menu
+    UIMenu1 menu;
     
-    
+    //Definir e iniciar variable de tabla
     DefaultTableModel dtm = new DefaultTableModel();
     
+    //Definir e iniciar controladores
     ControladorEmpresa cemp = new ControladorEmpresa();
     ControladorRol crol = new ControladorRol();
     ControladorEstado cest = new ControladorEstado();
     
+    //Constructor de controlador
     public ControladorUsuario(Usuario u, UIMenu1 m) {
         this.sign = u;
         this.menu = m;  
@@ -60,9 +62,7 @@ public class ControladorUsuario implements ActionListener{
                 
         menu.btnUser.setText(sign.getNombres());
         menu.setLocationRelativeTo(menu);
-        
-        
-        
+
     }
     
     @Override
@@ -123,10 +123,23 @@ public class ControladorUsuario implements ActionListener{
             }
         }
         
+        //Accionar boton "Usuarios"
         if(ae.getSource()==menu.btnUsuarios){
             listarUsuarios(menu.tblUsuario);
         }
         
+        //Accionar boton "Eliminar"
+        if(ae.getSource()==menu.btnEliminarUsuario){
+            int fila = menu.tblUsuario.getSelectedRow();
+            if(fila==-1){
+                JOptionPane.showMessageDialog(menu, "Debe seleccionar una fila");
+                
+            }else{
+            bigdecimal = new BigDecimal(""+menu.tblUsuario.getValueAt(fila, 0));
+            modificarEstado(bigdecimal);
+            listarUsuarios(menu.tblUsuario);
+            }
+        }
         
     }
     
@@ -340,5 +353,37 @@ public class ControladorUsuario implements ActionListener{
         menu.cbxUserRol.setSelectedIndex(0);
         menu.cbxUserEstado.setSelectedIndex(1);
         menu.cbxUserEmpresa.setSelectedIndex(0);
+    }
+
+    private void modificarEstado(BigDecimal bigdecimal) {
+        usuario = buscarUsuario(bigdecimal);
+        
+        estado = cest.buscaEstado(new BigDecimal(2));
+        
+        BigDecimal id = bigdecimal;
+        String user = usuario.getUsername();
+        String password = usuario.getPassword();
+        String name = usuario.getNombres();
+        String apat = usuario.getApaterno();
+        String amat = usuario.getAmaterno();
+        String rut = usuario.getRut();
+        String mail = usuario.getCorreo();
+        empresa = usuario.getEmpresa();
+        rol = usuario.getRol();
+        
+        String pass;
+        
+        //Se utiliza constructor de Usuario sin ID, ya que es autoincremental
+        usuario = new Usuario(id ,empresa, estado, rol, user, password, name, apat, amat, rut, mail);
+        
+        //HIBERNATE - Actualizar
+        SessionFactory sesion = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sesion.openSession();
+        Transaction tx = session.beginTransaction();
+        session.saveOrUpdate(usuario);
+        tx.commit();
+        session.close();
+        JOptionPane.showMessageDialog(null, "Usuario actualizado correctamente");
     }
 }
