@@ -30,6 +30,7 @@ public class Controlador  implements ActionListener{
     String user;
     String pass;
     
+    
     UIIniciarSesion login;
     
     public Controlador(UIIniciarSesion log) {
@@ -67,6 +68,24 @@ public class Controlador  implements ActionListener{
         if (usuario!=null) {
             if (usuario.getPassword().equals(password)) {
                 UIMenu1 menu = new UIMenu1();
+                
+                int i = usuario.getRol().getId().intValue();
+                
+                //En este punto se obtiene el tipo de rol, y se inicia el menú correspondiente.
+                    switch (i) {
+                    case 1:
+                        System.out.println("admin");
+                        break;
+                    case 2:
+                        System.out.println("prof");
+                        break;
+                    case 3:
+                        System.out.println("cliente");
+                        break;
+                    default:
+                        break;
+                }
+                
                 ControladorUsuario cusuario = new ControladorUsuario(usuario, menu);
                 menu.setVisible(true);
                 
