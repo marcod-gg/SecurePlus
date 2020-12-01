@@ -269,7 +269,7 @@ public class ControladorUsuario implements ActionListener{
         //Filtro contraseña vacia
         if(password.isEmpty()){
             usuario = buscarUsuario(id);
-            pass = passToSHA256(usuario.getPassword());
+            pass = usuario.getPassword();
         }else{
             pass = passToSHA256(password);
         }
@@ -340,7 +340,7 @@ public class ControladorUsuario implements ActionListener{
         menu.cbxUserEmpresa1.setSelectedIndex(usuario.getEmpresa().getId().intValueExact());
     }
     
-    //Funcion que permite llenar el combobox de "editar"
+    //Funcion que permite limpiar el combobox de "editar"
     private void limpiaDatosComboBoxAgregar() {
         
         menu.txtUserUser.setText("");

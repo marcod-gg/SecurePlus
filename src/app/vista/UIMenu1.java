@@ -644,7 +644,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         pAgregarUsuario.add(txtUserAMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 300, 38));
 
         cbxUserRol.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        cbxUserRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Cliente", "Profesional", "Administrador" }));
+        cbxUserRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Administrador", "Profesional", "Cliente" }));
         cbxUserRol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxUserRolActionPerformed(evt);
@@ -818,7 +818,7 @@ public final class UIMenu1 extends javax.swing.JFrame {
         pEditarUsuario.add(txtUserAMat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 300, 38));
 
         cbxUserRol1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        cbxUserRol1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Cliente", "Profesional", "Administrador" }));
+        cbxUserRol1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Administrador", "Profesional", "Cliente" }));
         cbxUserRol1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxUserRol1ActionPerformed(evt);

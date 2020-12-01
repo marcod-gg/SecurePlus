@@ -6,8 +6,10 @@
 package app.control;
 
 import app.modelo.Usuario;
+import app.vista.UIAdmin;
 import app.vista.UIIniciarSesion;
 import app.vista.UIMenu1;
+import app.vista.UIProfesional;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.charset.StandardCharsets;
@@ -67,30 +69,38 @@ public class Controlador  implements ActionListener{
         
         if (usuario!=null) {
             if (usuario.getPassword().equals(password)) {
-                UIMenu1 menu = new UIMenu1();
+                
                 
                 int i = usuario.getRol().getId().intValue();
+                System.out.println(i);
                 
-                //En este punto se obtiene el tipo de rol, y se inicia el menú correspondiente.
-                    switch (i) {
-                    case 1:
-                        System.out.println("admin");
-                        break;
-                    case 2:
-                        System.out.println("prof");
-                        break;
-                    case 3:
-                        System.out.println("cliente");
-                        break;
-                    default:
-                        break;
+                UIMenu1 menu = new UIMenu1();
+                
+                
+//              En este punto se obtiene el tipo de rol, y se inicia el menú correspondiente.
+                switch (i) {
+                case 1:
+                    UIAdmin uiadmin = new UIAdmin();
+                    ControladorAdmin cadmin = new ControladorAdmin(usuario, uiadmin);
+                    uiadmin.setVisible(true);
+                    uiadmin.setLocationRelativeTo(uiadmin);
+                    System.out.println("admin");
+                    break;
+                case 2:
+                    UIProfesional uiprof = new UIProfesional();
+                    ControladorProfesional cusuario = new ControladorProfesional(usuario, uiprof);
+                    menu.setVisible(true);
+                    menu.setLocationRelativeTo(menu);
+                    System.out.println("prof");
+                    break;
+                case 3:
+                    menu.setVisible(true);
+                    menu.setLocationRelativeTo(menu);
+                    System.out.println("cliente");
+                    break;
                 }
-                
-                ControladorUsuario cusuario = new ControladorUsuario(usuario, menu);
-                menu.setVisible(true);
-                
-                menu.setLocationRelativeTo(menu);
                 return true;
+                
             }else{
                 JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta");
                 return false;

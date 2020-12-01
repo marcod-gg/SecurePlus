@@ -42,8 +42,8 @@ public final class UIAdmin extends javax.swing.JFrame {
         container.setVisible(false);
         pInicio.setVisible(false);
         pAdminUsers.setVisible(false);
-        pAgregarUsuario.setVisible(false);
-        pEditarUsuario.setVisible(false);
+        pnlAgregarCliente.setVisible(false);
+        pnlEditarCliente.setVisible(false);
         panel.setVisible(true);
     }
     
@@ -62,7 +62,7 @@ public final class UIAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        Header = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnInicio = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
@@ -71,6 +71,8 @@ public final class UIAdmin extends javax.swing.JFrame {
         btnAdmin = new javax.swing.JButton();
         btnUser = new javax.swing.JButton();
         btnNotify = new javax.swing.JButton();
+        Footer = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         pnlCliente = new javax.swing.JPanel();
         btnRepAcc = new javax.swing.JButton();
         btnAseEsp = new javax.swing.JButton();
@@ -97,58 +99,68 @@ public final class UIAdmin extends javax.swing.JFrame {
         btnMiPerfil = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        pAgregarUsuario = new javax.swing.JPanel();
+        pnlAdminClientes = new javax.swing.JPanel();
+        lblTituloClientes = new javax.swing.JLabel();
+        btnAgregarCliente = new javax.swing.JButton();
+        btnEditarCliente = new javax.swing.JButton();
+        btnEliminarCliente = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblAdminClientes = new javax.swing.JTable();
+        pnlEditarCliente = new javax.swing.JPanel();
+        pnlHeaderEditar = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        btnEditarClienteCerrar = new javax.swing.JButton();
+        lblEditarClienteID = new javax.swing.JLabel();
+        lblUser10 = new javax.swing.JLabel();
+        lblUser11 = new javax.swing.JLabel();
+        lblUser12 = new javax.swing.JLabel();
+        lblUser13 = new javax.swing.JLabel();
+        lblUser14 = new javax.swing.JLabel();
+        lblUser16 = new javax.swing.JLabel();
+        lblUser17 = new javax.swing.JLabel();
+        lblUser18 = new javax.swing.JLabel();
+        lblUser19 = new javax.swing.JLabel();
+        txtEditarUsuarioUsername = new javax.swing.JTextField();
+        txtEditarUsuarioPassword = new javax.swing.JTextField();
+        txtUserAPat1 = new javax.swing.JTextField();
+        txtUserName1 = new javax.swing.JTextField();
+        txtUserAMat1 = new javax.swing.JTextField();
+        cbxUserEstado1 = new javax.swing.JComboBox<>();
+        cbxUserEmpresa1 = new javax.swing.JComboBox<>();
+        btnEditarClienteActualizar = new javax.swing.JButton();
+        txtUserMail1 = new javax.swing.JTextField();
+        txtUserRut1 = new javax.swing.JTextField();
+        pnlAgregarCliente = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnCerrar1 = new javax.swing.JButton();
         lblUser = new javax.swing.JLabel();
         lblUser1 = new javax.swing.JLabel();
+        lblUser2 = new javax.swing.JLabel();
+        lblUser3 = new javax.swing.JLabel();
+        lblUser4 = new javax.swing.JLabel();
+        lblUser6 = new javax.swing.JLabel();
+        lblUser7 = new javax.swing.JLabel();
+        lblUser8 = new javax.swing.JLabel();
+        lblUser9 = new javax.swing.JLabel();
         txtUserUser = new javax.swing.JTextField();
         txtUserPass = new javax.swing.JTextField();
         txtUserAPat = new javax.swing.JTextField();
         txtUserName = new javax.swing.JTextField();
         txtUserAMat = new javax.swing.JTextField();
-        cbxUserRol = new javax.swing.JComboBox<>();
         cbxUserEstado = new javax.swing.JComboBox<>();
         cbxUserEmpresa = new javax.swing.JComboBox<>();
-        lblUser2 = new javax.swing.JLabel();
-        lblUser3 = new javax.swing.JLabel();
-        lblUser4 = new javax.swing.JLabel();
-        lblUser5 = new javax.swing.JLabel();
-        lblUser6 = new javax.swing.JLabel();
-        lblUser7 = new javax.swing.JLabel();
-        btnGuardarUsuario = new javax.swing.JButton();
-        btnLimpiarUsuario = new javax.swing.JButton();
+        btnAgregarClienteGuardar = new javax.swing.JButton();
+        btnAgregarClienteLimpiar = new javax.swing.JButton();
         txtUserMail = new javax.swing.JTextField();
         txtUserRut = new javax.swing.JTextField();
-        lblUser8 = new javax.swing.JLabel();
-        lblUser9 = new javax.swing.JLabel();
-        pEditarUsuario = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        btnCerrar2 = new javax.swing.JButton();
-        lblEditID = new javax.swing.JLabel();
-        lblUser10 = new javax.swing.JLabel();
-        lblUser11 = new javax.swing.JLabel();
-        txtUserUser1 = new javax.swing.JTextField();
-        txtUserPass1 = new javax.swing.JTextField();
-        txtUserAPat1 = new javax.swing.JTextField();
-        txtUserName1 = new javax.swing.JTextField();
-        txtUserAMat1 = new javax.swing.JTextField();
-        cbxUserRol1 = new javax.swing.JComboBox<>();
-        cbxUserEstado1 = new javax.swing.JComboBox<>();
-        cbxUserEmpresa1 = new javax.swing.JComboBox<>();
-        lblUser12 = new javax.swing.JLabel();
-        lblUser13 = new javax.swing.JLabel();
-        lblUser14 = new javax.swing.JLabel();
-        lblUser15 = new javax.swing.JLabel();
-        lblUser16 = new javax.swing.JLabel();
-        lblUser17 = new javax.swing.JLabel();
-        btnUserActualizar = new javax.swing.JButton();
-        txtUserMail1 = new javax.swing.JTextField();
-        txtUserRut1 = new javax.swing.JTextField();
-        lblUser18 = new javax.swing.JLabel();
-        lblUser19 = new javax.swing.JLabel();
+        pnlAdminProfesionales = new javax.swing.JPanel();
+        btnAgregarUsuario1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblUsuario1 = new javax.swing.JTable();
+        btnEditarUsuario1 = new javax.swing.JButton();
+        btnEliminarUsuario1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         pAdminUsers = new javax.swing.JPanel();
         btnAgregarUsuario = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -159,8 +171,6 @@ public final class UIAdmin extends javax.swing.JFrame {
         pInicio = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
-        footer = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -171,13 +181,13 @@ public final class UIAdmin extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(colorSecondary);
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Header.setBackground(colorSecondary);
+        Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/splogo_1.png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(250, 70));
         jLabel2.setRequestFocusEnabled(false);
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, -1));
+        Header.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, -1));
 
         btnInicio.setBackground(colorSecondary);
         btnInicio.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -189,7 +199,7 @@ public final class UIAdmin extends javax.swing.JFrame {
                 btnInicioActionPerformed(evt);
             }
         });
-        jPanel2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 200, 70));
+        Header.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 200, 70));
 
         btnCliente.setBackground(colorSecondary);
         btnCliente.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -206,7 +216,7 @@ public final class UIAdmin extends javax.swing.JFrame {
                 btnClienteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 200, 70));
+        Header.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 200, 70));
 
         btnProfes.setBackground(colorSecondary);
         btnProfes.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -223,7 +233,7 @@ public final class UIAdmin extends javax.swing.JFrame {
                 btnProfesActionPerformed(evt);
             }
         });
-        jPanel2.add(btnProfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 200, 70));
+        Header.add(btnProfes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 200, 70));
 
         btnInformes.setBackground(colorSecondary);
         btnInformes.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -240,7 +250,7 @@ public final class UIAdmin extends javax.swing.JFrame {
                 btnInformesActionPerformed(evt);
             }
         });
-        jPanel2.add(btnInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 200, 70));
+        Header.add(btnInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 200, 70));
 
         btnAdmin.setBackground(colorSecondary);
         btnAdmin.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -257,7 +267,7 @@ public final class UIAdmin extends javax.swing.JFrame {
                 btnAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, 200, 70));
+        Header.add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, 200, 70));
 
         btnUser.setBackground(colorSecondary);
         btnUser.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -271,7 +281,7 @@ public final class UIAdmin extends javax.swing.JFrame {
                 btnUserActionPerformed(evt);
             }
         });
-        jPanel2.add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 0, -1, -1));
+        Header.add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 0, -1, -1));
 
         btnNotify.setBackground(colorSecondary);
         btnNotify.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
@@ -284,9 +294,21 @@ public final class UIAdmin extends javax.swing.JFrame {
                 btnNotifyActionPerformed(evt);
             }
         });
-        jPanel2.add(btnNotify, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 0, -1, -1));
+        Header.add(btnNotify, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 0, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 70));
+        jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 70));
+
+        Footer.setBackground(colorFooter);
+        Footer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(colorFooter);
+        jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Copyright © Secure Plus 2020");
+        Footer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1900, 30));
+
+        jPanel1.add(Footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1040, 1920, 40));
 
         pnlCliente.setBackground(colorSecondary);
         pnlCliente.setPreferredSize(new java.awt.Dimension(200, 150));
@@ -582,10 +604,256 @@ public final class UIAdmin extends javax.swing.JFrame {
 
         jPanel1.add(pnlSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, -1000, -1, -1));
 
-        pAgregarUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        pAgregarUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pAgregarUsuario.setPreferredSize(new java.awt.Dimension(840, 680));
-        pAgregarUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlAdminClientes.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAdminClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTituloClientes.setBackground(new java.awt.Color(255, 255, 255));
+        lblTituloClientes.setFont(new java.awt.Font("Segoe UI Semibold", 1, 36)); // NOI18N
+        lblTituloClientes.setForeground(new java.awt.Color(102, 102, 102));
+        lblTituloClientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTituloClientes.setText("CLIENTES");
+        pnlAdminClientes.add(lblTituloClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 1280, 50));
+
+        btnAgregarCliente.setBackground(colorBtnAgregar);
+        btnAgregarCliente.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnAgregarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarCliente.setText("+ Agregar Nuevo");
+        btnAgregarCliente.setBorder(null);
+        btnAgregarCliente.setPreferredSize(new java.awt.Dimension(200, 60));
+        btnAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarClienteActionPerformed(evt);
+            }
+        });
+        pnlAdminClientes.add(btnAgregarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 840, -1, -1));
+
+        btnEditarCliente.setBackground(colorInfo);
+        btnEditarCliente.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnEditarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditarCliente.setText("Editar Usuario");
+        btnEditarCliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEditarCliente.setPreferredSize(new java.awt.Dimension(200, 60));
+        btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarClienteActionPerformed(evt);
+            }
+        });
+        pnlAdminClientes.add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 840, -1, -1));
+
+        btnEliminarCliente.setBackground(colorDanger);
+        btnEliminarCliente.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnEliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarCliente.setText("Eliminar");
+        btnEliminarCliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminarCliente.setPreferredSize(new java.awt.Dimension(100, 60));
+        btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarClienteActionPerformed(evt);
+            }
+        });
+        pnlAdminClientes.add(btnEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 840, -1, -1));
+
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(1280, 700));
+
+        tblAdminClientes.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        tblAdminClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nombre de usuario", "Nombres", "Apellido Paterno", "Apellido Materno", "RUT", "Correo", "Estado", "Empresa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tblAdminClientes);
+        if (tblAdminClientes.getColumnModel().getColumnCount() > 0) {
+            tblAdminClientes.getColumnModel().getColumn(0).setMinWidth(10);
+            tblAdminClientes.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblAdminClientes.getColumnModel().getColumn(0).setMaxWidth(100);
+            tblAdminClientes.getColumnModel().getColumn(1).setMinWidth(10);
+            tblAdminClientes.getColumnModel().getColumn(1).setPreferredWidth(150);
+            tblAdminClientes.getColumnModel().getColumn(1).setMaxWidth(300);
+            tblAdminClientes.getColumnModel().getColumn(2).setMinWidth(10);
+            tblAdminClientes.getColumnModel().getColumn(2).setPreferredWidth(150);
+            tblAdminClientes.getColumnModel().getColumn(2).setMaxWidth(500);
+            tblAdminClientes.getColumnModel().getColumn(3).setMinWidth(10);
+            tblAdminClientes.getColumnModel().getColumn(3).setPreferredWidth(100);
+            tblAdminClientes.getColumnModel().getColumn(3).setMaxWidth(300);
+            tblAdminClientes.getColumnModel().getColumn(4).setMinWidth(10);
+            tblAdminClientes.getColumnModel().getColumn(4).setPreferredWidth(100);
+            tblAdminClientes.getColumnModel().getColumn(4).setMaxWidth(300);
+            tblAdminClientes.getColumnModel().getColumn(5).setPreferredWidth(100);
+            tblAdminClientes.getColumnModel().getColumn(6).setPreferredWidth(200);
+        }
+
+        pnlAdminClientes.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, 700));
+
+        pnlEditarCliente.setBackground(new java.awt.Color(255, 255, 255));
+        pnlEditarCliente.setPreferredSize(new java.awt.Dimension(840, 680));
+        pnlEditarCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlHeaderEditar.setBackground(new java.awt.Color(0, 255, 102));
+        pnlHeaderEditar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("EDITAR CLIENTE:     ");
+        pnlHeaderEditar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 620, 30));
+
+        btnEditarClienteCerrar.setBackground(new java.awt.Color(0, 255, 102));
+        btnEditarClienteCerrar.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        btnEditarClienteCerrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditarClienteCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/cruz2.png"))); // NOI18N
+        btnEditarClienteCerrar.setBorder(null);
+        btnEditarClienteCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEditarClienteCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarClienteCerrarActionPerformed(evt);
+            }
+        });
+        pnlHeaderEditar.add(btnEditarClienteCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 30, 30));
+
+        lblEditarClienteID.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        lblEditarClienteID.setForeground(new java.awt.Color(255, 255, 255));
+        lblEditarClienteID.setText(" ");
+        pnlHeaderEditar.add(lblEditarClienteID, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 30, 30));
+
+        pnlEditarCliente.add(pnlHeaderEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 50));
+
+        lblUser10.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser10.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser10.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser10.setText("Apellido Paterno");
+        lblUser10.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 200, 40));
+
+        lblUser11.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser11.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser11.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser11.setText("Apellido Materno");
+        lblUser11.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 200, 40));
+
+        lblUser12.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser12.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser12.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser12.setText("Nombre de Usuario");
+        lblUser12.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 200, 40));
+
+        lblUser13.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser13.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser13.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser13.setText("Nombres");
+        lblUser13.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 40));
+
+        lblUser14.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser14.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser14.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser14.setText("Contraseña");
+        lblUser14.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 200, 40));
+
+        lblUser16.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser16.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser16.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser16.setText("Empresa");
+        lblUser16.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 200, 40));
+
+        lblUser17.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser17.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser17.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser17.setText("Estado");
+        lblUser17.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 200, 40));
+
+        lblUser18.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser18.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser18.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser18.setText("RUT");
+        lblUser18.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 200, 40));
+
+        lblUser19.setBackground(new java.awt.Color(0, 0, 0));
+        lblUser19.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblUser19.setForeground(new java.awt.Color(0, 0, 0));
+        lblUser19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblUser19.setText("Correo electronico");
+        lblUser19.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        pnlEditarCliente.add(lblUser19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 200, 40));
+
+        txtEditarUsuarioUsername.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlEditarCliente.add(txtEditarUsuarioUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 300, 40));
+
+        txtEditarUsuarioPassword.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlEditarCliente.add(txtEditarUsuarioPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 300, 40));
+
+        txtUserAPat1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlEditarCliente.add(txtUserAPat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 300, 38));
+
+        txtUserName1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlEditarCliente.add(txtUserName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 300, 38));
+
+        txtUserAMat1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlEditarCliente.add(txtUserAMat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 300, 38));
+
+        cbxUserEstado1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        cbxUserEstado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Activo", "Suspendido" }));
+        pnlEditarCliente.add(cbxUserEstado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 300, 37));
+
+        cbxUserEmpresa1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        cbxUserEmpresa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "SecurePlus", "Duoc", "Correos de Chile" }));
+        pnlEditarCliente.add(cbxUserEmpresa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 300, 37));
+
+        btnEditarClienteActualizar.setBackground(new java.awt.Color(0, 204, 102));
+        btnEditarClienteActualizar.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnEditarClienteActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditarClienteActualizar.setText("Actualizar");
+        btnEditarClienteActualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEditarClienteActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarClienteActualizarActionPerformed(evt);
+            }
+        });
+        pnlEditarCliente.add(btnEditarClienteActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, 300, 40));
+
+        txtUserMail1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlEditarCliente.add(txtUserMail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 300, 38));
+
+        txtUserRut1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlEditarCliente.add(txtUserRut1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 300, 38));
+
+        pnlAdminClientes.add(pnlEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 640, -1));
+
+        pnlAgregarCliente.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAgregarCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlAgregarCliente.setPreferredSize(new java.awt.Dimension(840, 680));
+        pnlAgregarCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(0, 255, 102));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -610,7 +878,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         });
         jPanel6.add(btnCerrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 30, 30));
 
-        pAgregarUsuario.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 50));
+        pnlAgregarCliente.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 50));
 
         lblUser.setBackground(new java.awt.Color(0, 0, 0));
         lblUser.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -618,7 +886,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser.setText("Apellido Paterno");
         lblUser.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 200, 40));
+        pnlAgregarCliente.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 200, 40));
 
         lblUser1.setBackground(new java.awt.Color(0, 0, 0));
         lblUser1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -626,39 +894,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser1.setText("Apellido Materno");
         lblUser1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 200, 40));
-
-        txtUserUser.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pAgregarUsuario.add(txtUserUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 300, 40));
-
-        txtUserPass.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pAgregarUsuario.add(txtUserPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 300, 40));
-
-        txtUserAPat.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pAgregarUsuario.add(txtUserAPat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 300, 38));
-
-        txtUserName.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pAgregarUsuario.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 300, 38));
-
-        txtUserAMat.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pAgregarUsuario.add(txtUserAMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 300, 38));
-
-        cbxUserRol.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        cbxUserRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Cliente", "Profesional", "Administrador" }));
-        cbxUserRol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxUserRolActionPerformed(evt);
-            }
-        });
-        pAgregarUsuario.add(cbxUserRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 300, 37));
-
-        cbxUserEstado.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        cbxUserEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Activo", "Suspendido" }));
-        pAgregarUsuario.add(cbxUserEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 300, 37));
-
-        cbxUserEmpresa.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        cbxUserEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "SecurePlus", "Duoc", "Correos de Chile" }));
-        pAgregarUsuario.add(cbxUserEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 300, 37));
+        pnlAgregarCliente.add(lblUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 200, 40));
 
         lblUser2.setBackground(new java.awt.Color(0, 0, 0));
         lblUser2.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -666,7 +902,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser2.setText("Nombre de Usuario");
         lblUser2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 200, 40));
+        pnlAgregarCliente.add(lblUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 200, 40));
 
         lblUser3.setBackground(new java.awt.Color(0, 0, 0));
         lblUser3.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -674,7 +910,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser3.setText("Nombres");
         lblUser3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 40));
+        pnlAgregarCliente.add(lblUser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 40));
 
         lblUser4.setBackground(new java.awt.Color(0, 0, 0));
         lblUser4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -682,15 +918,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser4.setText("Contraseña");
         lblUser4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 200, 40));
-
-        lblUser5.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser5.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser5.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser5.setText("Rol");
-        lblUser5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 200, 40));
+        pnlAgregarCliente.add(lblUser4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 200, 40));
 
         lblUser6.setBackground(new java.awt.Color(0, 0, 0));
         lblUser6.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -698,7 +926,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser6.setText("Empresa");
         lblUser6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 200, 40));
+        pnlAgregarCliente.add(lblUser6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 200, 40));
 
         lblUser7.setBackground(new java.awt.Color(0, 0, 0));
         lblUser7.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -706,32 +934,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser7.setText("Estado");
         lblUser7.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 200, 40));
-
-        btnGuardarUsuario.setBackground(new java.awt.Color(0, 204, 102));
-        btnGuardarUsuario.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        btnGuardarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardarUsuario.setText("Guardar");
-        btnGuardarUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnGuardarUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarUsuarioActionPerformed(evt);
-            }
-        });
-        pAgregarUsuario.add(btnGuardarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 160, 40));
-
-        btnLimpiarUsuario.setBackground(new java.awt.Color(0, 153, 153));
-        btnLimpiarUsuario.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        btnLimpiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnLimpiarUsuario.setText("Limpiar");
-        btnLimpiarUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        pAgregarUsuario.add(btnLimpiarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 620, 130, 40));
-
-        txtUserMail.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pAgregarUsuario.add(txtUserMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 300, 38));
-
-        txtUserRut.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pAgregarUsuario.add(txtUserRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 300, 38));
+        pnlAgregarCliente.add(lblUser7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 200, 40));
 
         lblUser8.setBackground(new java.awt.Color(0, 0, 0));
         lblUser8.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -739,7 +942,7 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser8.setText("RUT");
         lblUser8.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 200, 40));
+        pnlAgregarCliente.add(lblUser8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 200, 40));
 
         lblUser9.setBackground(new java.awt.Color(0, 0, 0));
         lblUser9.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -747,176 +950,159 @@ public final class UIAdmin extends javax.swing.JFrame {
         lblUser9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUser9.setText("Correo electronico");
         lblUser9.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pAgregarUsuario.add(lblUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 200, 40));
+        pnlAgregarCliente.add(lblUser9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 200, 40));
 
-        jPanel1.add(pAgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 640, -1));
+        txtUserUser.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlAgregarCliente.add(txtUserUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 300, 40));
 
-        pEditarUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        pEditarUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pEditarUsuario.setPreferredSize(new java.awt.Dimension(840, 680));
-        pEditarUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        txtUserPass.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlAgregarCliente.add(txtUserPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 300, 40));
 
-        jPanel7.setBackground(new java.awt.Color(0, 255, 102));
-        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        txtUserAPat.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlAgregarCliente.add(txtUserAPat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 300, 38));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Editar usuario:     ");
-        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 620, -1));
+        txtUserName.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlAgregarCliente.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 300, 38));
 
-        btnCerrar2.setBackground(new java.awt.Color(0, 255, 102));
-        btnCerrar2.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        btnCerrar2.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/vista/img/cruz2.png"))); // NOI18N
-        btnCerrar2.setBorder(null);
-        btnCerrar2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCerrar2.addActionListener(new java.awt.event.ActionListener() {
+        txtUserAMat.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlAgregarCliente.add(txtUserAMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 300, 38));
+
+        cbxUserEstado.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        cbxUserEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Activo", "Suspendido" }));
+        pnlAgregarCliente.add(cbxUserEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 300, 37));
+
+        cbxUserEmpresa.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        cbxUserEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "SecurePlus", "Duoc", "Correos de Chile" }));
+        pnlAgregarCliente.add(cbxUserEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 300, 37));
+
+        btnAgregarClienteGuardar.setBackground(new java.awt.Color(0, 204, 102));
+        btnAgregarClienteGuardar.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnAgregarClienteGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarClienteGuardar.setText("Guardar");
+        btnAgregarClienteGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAgregarClienteGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrar2ActionPerformed(evt);
+                btnAgregarClienteGuardarActionPerformed(evt);
             }
         });
-        jPanel7.add(btnCerrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 30, 30));
+        pnlAgregarCliente.add(btnAgregarClienteGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 300, 40));
 
-        lblEditID.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        lblEditID.setForeground(new java.awt.Color(255, 255, 255));
-        lblEditID.setText(" ");
-        jPanel7.add(lblEditID, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 30, 30));
+        btnAgregarClienteLimpiar.setBackground(new java.awt.Color(0, 153, 153));
+        btnAgregarClienteLimpiar.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnAgregarClienteLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarClienteLimpiar.setText("Limpiar");
+        btnAgregarClienteLimpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlAgregarCliente.add(btnAgregarClienteLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 580, 300, 40));
 
-        pEditarUsuario.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 50));
+        txtUserMail.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlAgregarCliente.add(txtUserMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 300, 38));
 
-        lblUser10.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser10.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser10.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser10.setText("Apellido Paterno");
-        lblUser10.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 200, 40));
+        txtUserRut.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        pnlAgregarCliente.add(txtUserRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 300, 38));
 
-        lblUser11.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser11.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser11.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser11.setText("Apellido Materno");
-        lblUser11.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 200, 40));
+        pnlAdminClientes.add(pnlAgregarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 640, -1));
 
-        txtUserUser1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pEditarUsuario.add(txtUserUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 300, 40));
+        jPanel1.add(pnlAdminClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1920, 970));
 
-        txtUserPass1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pEditarUsuario.add(txtUserPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 300, 40));
+        pnlAdminProfesionales.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAdminProfesionales.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtUserAPat1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pEditarUsuario.add(txtUserAPat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 300, 38));
-
-        txtUserName1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pEditarUsuario.add(txtUserName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 300, 38));
-
-        txtUserAMat1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pEditarUsuario.add(txtUserAMat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 300, 38));
-
-        cbxUserRol1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        cbxUserRol1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Cliente", "Profesional", "Administrador" }));
-        cbxUserRol1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarUsuario1.setBackground(colorBtnAgregar);
+        btnAgregarUsuario1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnAgregarUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarUsuario1.setText("+ Agregar Nuevo");
+        btnAgregarUsuario1.setBorder(null);
+        btnAgregarUsuario1.setPreferredSize(new java.awt.Dimension(200, 60));
+        btnAgregarUsuario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxUserRol1ActionPerformed(evt);
+                btnAgregarUsuario1ActionPerformed(evt);
             }
         });
-        pEditarUsuario.add(cbxUserRol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 300, 37));
+        pnlAdminProfesionales.add(btnAgregarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 840, -1, -1));
 
-        cbxUserEstado1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        cbxUserEstado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Activo", "Suspendido" }));
-        pEditarUsuario.add(cbxUserEstado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 300, 37));
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(1280, 700));
 
-        cbxUserEmpresa1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        cbxUserEmpresa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "SecurePlus", "Duoc", "Correos de Chile" }));
-        pEditarUsuario.add(cbxUserEmpresa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 300, 37));
+        tblUsuario1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        tblUsuario1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        lblUser12.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser12.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser12.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser12.setText("Nombre de Usuario");
-        lblUser12.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 200, 40));
+            },
+            new String [] {
+                "ID", "Nombre de usuario", "Nombres", "Apellido Paterno", "Apellido Materno", "RUT", "Correo", "Rol", "Estado", "Empresa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
 
-        lblUser13.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser13.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser13.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser13.setText("Nombres");
-        lblUser13.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 40));
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        lblUser14.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser14.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser14.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser14.setText("Contraseña");
-        lblUser14.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 200, 40));
-
-        lblUser15.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser15.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser15.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser15.setText("Rol");
-        lblUser15.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 200, 40));
-
-        lblUser16.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser16.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser16.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser16.setText("Empresa");
-        lblUser16.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 200, 40));
-
-        lblUser17.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser17.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser17.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser17.setText("Estado");
-        lblUser17.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 200, 40));
-
-        btnUserActualizar.setBackground(new java.awt.Color(0, 204, 102));
-        btnUserActualizar.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        btnUserActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        btnUserActualizar.setText("Actualizar");
-        btnUserActualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnUserActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserActualizarActionPerformed(evt);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        pEditarUsuario.add(btnUserActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 620, 300, 40));
+        jScrollPane2.setViewportView(tblUsuario1);
+        if (tblUsuario1.getColumnModel().getColumnCount() > 0) {
+            tblUsuario1.getColumnModel().getColumn(0).setMinWidth(10);
+            tblUsuario1.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblUsuario1.getColumnModel().getColumn(0).setMaxWidth(100);
+            tblUsuario1.getColumnModel().getColumn(1).setMinWidth(10);
+            tblUsuario1.getColumnModel().getColumn(1).setPreferredWidth(150);
+            tblUsuario1.getColumnModel().getColumn(1).setMaxWidth(300);
+            tblUsuario1.getColumnModel().getColumn(2).setMinWidth(10);
+            tblUsuario1.getColumnModel().getColumn(2).setPreferredWidth(150);
+            tblUsuario1.getColumnModel().getColumn(2).setMaxWidth(500);
+            tblUsuario1.getColumnModel().getColumn(3).setMinWidth(10);
+            tblUsuario1.getColumnModel().getColumn(3).setPreferredWidth(100);
+            tblUsuario1.getColumnModel().getColumn(3).setMaxWidth(300);
+            tblUsuario1.getColumnModel().getColumn(4).setMinWidth(10);
+            tblUsuario1.getColumnModel().getColumn(4).setPreferredWidth(100);
+            tblUsuario1.getColumnModel().getColumn(4).setMaxWidth(300);
+            tblUsuario1.getColumnModel().getColumn(5).setPreferredWidth(100);
+            tblUsuario1.getColumnModel().getColumn(6).setPreferredWidth(200);
+        }
 
-        txtUserMail1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pEditarUsuario.add(txtUserMail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 300, 38));
+        pnlAdminProfesionales.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, 700));
 
-        txtUserRut1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        pEditarUsuario.add(txtUserRut1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 300, 38));
+        btnEditarUsuario1.setBackground(colorInfo);
+        btnEditarUsuario1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnEditarUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditarUsuario1.setText("Editar Usuario");
+        btnEditarUsuario1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEditarUsuario1.setPreferredSize(new java.awt.Dimension(200, 60));
+        btnEditarUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarUsuario1ActionPerformed(evt);
+            }
+        });
+        pnlAdminProfesionales.add(btnEditarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 840, -1, -1));
 
-        lblUser18.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser18.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser18.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser18.setText("RUT");
-        lblUser18.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 200, 40));
+        btnEliminarUsuario1.setBackground(colorDanger);
+        btnEliminarUsuario1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        btnEliminarUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarUsuario1.setText("Eliminar");
+        btnEliminarUsuario1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminarUsuario1.setPreferredSize(new java.awt.Dimension(100, 60));
+        btnEliminarUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarUsuario1ActionPerformed(evt);
+            }
+        });
+        pnlAdminProfesionales.add(btnEliminarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 840, -1, -1));
 
-        lblUser19.setBackground(new java.awt.Color(0, 0, 0));
-        lblUser19.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        lblUser19.setForeground(new java.awt.Color(0, 0, 0));
-        lblUser19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUser19.setText("Correo electronico");
-        lblUser19.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pEditarUsuario.add(lblUser19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 200, 40));
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("USUARIOS");
+        pnlAdminProfesionales.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 1280, 50));
 
-        jPanel1.add(pEditarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 640, -1));
+        jPanel1.add(pnlAdminProfesionales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1920, 970));
 
         pAdminUsers.setBackground(new java.awt.Color(255, 255, 255));
         pAdminUsers.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1043,18 +1229,6 @@ public final class UIAdmin extends javax.swing.JFrame {
         );
 
         jPanel1.add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1920, 970));
-
-        footer.setBackground(colorFooter);
-        footer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(colorFooter);
-        jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Copyright © Secure Plus 2020");
-        footer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1900, 30));
-
-        jPanel1.add(footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1040, 1920, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1211,17 +1385,13 @@ public final class UIAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarUsuarioActionPerformed
 
     private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
-        pAgregarUsuario.setVisible(false);
+        pnlAgregarCliente.setVisible(false);
         pAdminUsers.setVisible(true);
     }//GEN-LAST:event_btnCerrar1ActionPerformed
 
-    private void cbxUserRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxUserRolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxUserRolActionPerformed
-
-    private void btnGuardarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarUsuarioActionPerformed
+    private void btnAgregarClienteGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteGuardarActionPerformed
         
-    }//GEN-LAST:event_btnGuardarUsuarioActionPerformed
+    }//GEN-LAST:event_btnAgregarClienteGuardarActionPerformed
 
     private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuarioActionPerformed
         
@@ -1231,18 +1401,14 @@ public final class UIAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarUsuarioActionPerformed
 
-    private void btnCerrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar2ActionPerformed
-        pEditarUsuario.setVisible(false);
+    private void btnEditarClienteCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteCerrarActionPerformed
+        pnlEditarCliente.setVisible(false);
         pAdminUsers.setVisible(true);
-    }//GEN-LAST:event_btnCerrar2ActionPerformed
+    }//GEN-LAST:event_btnEditarClienteCerrarActionPerformed
 
-    private void cbxUserRol1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxUserRol1ActionPerformed
+    private void btnEditarClienteActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbxUserRol1ActionPerformed
-
-    private void btnUserActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActualizarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUserActualizarActionPerformed
+    }//GEN-LAST:event_btnEditarClienteActualizarActionPerformed
 
     private void btnRepGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRepGlobalActionPerformed
         // TODO add your handling code here:
@@ -1264,29 +1430,62 @@ public final class UIAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnAgregarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarUsuario1ActionPerformed
+
+    private void btnEditarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarUsuario1ActionPerformed
+
+    private void btnEliminarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarUsuario1ActionPerformed
+
+    private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarClienteActionPerformed
+
+    private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarClienteActionPerformed
+
+    private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarClienteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Footer;
+    private javax.swing.JPanel Header;
     private javax.swing.JButton btnActividades;
     private javax.swing.JButton btnAdmin;
+    public javax.swing.JButton btnAgregarCliente;
+    public javax.swing.JButton btnAgregarClienteGuardar;
+    public javax.swing.JButton btnAgregarClienteLimpiar;
     public javax.swing.JButton btnAgregarUsuario;
+    public javax.swing.JButton btnAgregarUsuario1;
     private javax.swing.JButton btnAseEsp;
     private javax.swing.JButton btnAsesorias;
     private javax.swing.JButton btnAtrasos;
     private javax.swing.JButton btnCapacitaciones;
     private javax.swing.JButton btnCerrar1;
-    private javax.swing.JButton btnCerrar2;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnChecklist;
     private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnCliente2;
     private javax.swing.JButton btnCliente3;
+    public javax.swing.JButton btnEditarCliente;
+    public javax.swing.JButton btnEditarClienteActualizar;
+    private javax.swing.JButton btnEditarClienteCerrar;
     public javax.swing.JButton btnEditarUsuario;
+    public javax.swing.JButton btnEditarUsuario1;
+    public javax.swing.JButton btnEliminarCliente;
     public javax.swing.JButton btnEliminarUsuario;
-    public javax.swing.JButton btnGuardarUsuario;
+    public javax.swing.JButton btnEliminarUsuario1;
     private javax.swing.JButton btnInfoAcc;
     private javax.swing.JButton btnInformes;
     private javax.swing.JButton btnInicio;
-    public javax.swing.JButton btnLimpiarUsuario;
     private javax.swing.JButton btnMejoras;
     private javax.swing.JButton btnMiPerfil;
     private javax.swing.JButton btnNotify;
@@ -1298,29 +1497,27 @@ public final class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnRepGlobal;
     public javax.swing.JButton btnSalir;
     public javax.swing.JButton btnUser;
-    public javax.swing.JButton btnUserActualizar;
     public javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVisitas;
     public javax.swing.JComboBox<String> cbxUserEmpresa;
     public javax.swing.JComboBox<String> cbxUserEmpresa1;
     public javax.swing.JComboBox<String> cbxUserEstado;
     public javax.swing.JComboBox<String> cbxUserEstado1;
-    public javax.swing.JComboBox<String> cbxUserRol;
-    public javax.swing.JComboBox<String> cbxUserRol1;
     private javax.swing.JPanel container;
-    private javax.swing.JPanel footer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JLabel lblEditID;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    public javax.swing.JLabel lblEditarClienteID;
+    private javax.swing.JLabel lblTituloClientes;
     private javax.swing.JLabel lblUser;
     private javax.swing.JLabel lblUser1;
     private javax.swing.JLabel lblUser10;
@@ -1328,7 +1525,6 @@ public final class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblUser12;
     private javax.swing.JLabel lblUser13;
     private javax.swing.JLabel lblUser14;
-    private javax.swing.JLabel lblUser15;
     private javax.swing.JLabel lblUser16;
     private javax.swing.JLabel lblUser17;
     private javax.swing.JLabel lblUser18;
@@ -1336,22 +1532,28 @@ public final class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblUser2;
     private javax.swing.JLabel lblUser3;
     private javax.swing.JLabel lblUser4;
-    private javax.swing.JLabel lblUser5;
     private javax.swing.JLabel lblUser6;
     private javax.swing.JLabel lblUser7;
     private javax.swing.JLabel lblUser8;
     private javax.swing.JLabel lblUser9;
     public javax.swing.JPanel pAdminUsers;
-    public javax.swing.JPanel pAgregarUsuario;
-    public javax.swing.JPanel pEditarUsuario;
     private javax.swing.JPanel pInicio;
     private javax.swing.JPanel pnlAdmin;
+    public javax.swing.JPanel pnlAdminClientes;
+    public javax.swing.JPanel pnlAdminProfesionales;
+    public javax.swing.JPanel pnlAgregarCliente;
     private javax.swing.JPanel pnlCliente;
+    public javax.swing.JPanel pnlEditarCliente;
+    private javax.swing.JPanel pnlHeaderEditar;
     private javax.swing.JPanel pnlInformes;
     private javax.swing.JPanel pnlNotify;
     private javax.swing.JPanel pnlProfes;
     private javax.swing.JPanel pnlSesion;
+    public javax.swing.JTable tblAdminClientes;
     public javax.swing.JTable tblUsuario;
+    public javax.swing.JTable tblUsuario1;
+    public javax.swing.JTextField txtEditarUsuarioPassword;
+    public javax.swing.JTextField txtEditarUsuarioUsername;
     public javax.swing.JTextField txtUserAMat;
     public javax.swing.JTextField txtUserAMat1;
     public javax.swing.JTextField txtUserAPat;
@@ -1361,11 +1563,9 @@ public final class UIAdmin extends javax.swing.JFrame {
     public javax.swing.JTextField txtUserName;
     public javax.swing.JTextField txtUserName1;
     public javax.swing.JTextField txtUserPass;
-    public javax.swing.JTextField txtUserPass1;
     public javax.swing.JTextField txtUserRut;
     public javax.swing.JTextField txtUserRut1;
     public javax.swing.JTextField txtUserUser;
-    public javax.swing.JTextField txtUserUser1;
     // End of variables declaration//GEN-END:variables
 
    
