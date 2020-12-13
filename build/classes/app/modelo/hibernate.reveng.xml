@@ -41,20 +41,23 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-schema="SECUREPLUS"/>
-  <table-filter match-name="MODULO"/>
-  <table-filter match-name="ROL_OPERACION"/>
-  <table-filter match-name="ESTADO"/>
   <table-filter match-name="OPCION"/>
-  <table-filter match-name="CHECKLIST"/>
+  <table-filter match-name="RESPUESTA"/>
+  <table-filter match-name="PAGO"/>
+  <table-filter match-name="ESTADOINSTANCIA"/>
+  <table-filter match-name="TIPOINSTANCIA"/>
   <table-filter match-name="OPERACION"/>
+  <table-filter match-name="ESTADO"/>
   <table-filter match-name="ROL"/>
+  <table-filter match-name="PREGUNTA"/>
+  <table-filter match-name="LISTAPREGUNTA"/>
+  <table-filter match-name="ROL_OPERACION"/>
+  <table-filter match-name="MODULO"/>
+  <table-filter match-name="ESTADOPAGO"/>
   <table-filter match-name="INSTANCIA"/>
+  <table-filter match-name="CUESTIONARIO"/>
+  <table-filter match-name="EMPRESA"/>
+  <table-filter match-name="CHECKLIST"/>
   <table-filter match-name="USUARIO"/>
   <table-filter match-name="REGISTRO"/>
-  <table-filter match-name="ESTADOINSTANCIA"/>
-  <table-filter match-name="EMPRESA"/>
-  <table-filter match-name="ESTADOPAGO"/>
-  <table-filter match-name="TIPOINSTANCIA"/>
-  <table-filter match-name="PREGUNTA"/>
-  <table-filter match-name="PAGO"/>
 </hibernate-reverse-engineering>

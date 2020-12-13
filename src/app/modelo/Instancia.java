@@ -1,5 +1,5 @@
 package app.modelo;
-// Generated 04-11-2020 20:26:53 by Hibernate Tools 4.3.1
+// Generated 12-12-2020 19:24:53 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -22,7 +22,8 @@ public class Instancia  implements java.io.Serializable {
      private String tema;
      private String descripcion;
      private String direccion;
-     private Set checklists = new HashSet(0);
+     private Set cuestionarios = new HashSet(0);
+     private Set respuestas = new HashSet(0);
      private Set registros = new HashSet(0);
 
     public Instancia() {
@@ -41,7 +42,7 @@ public class Instancia  implements java.io.Serializable {
         this.descripcion = descripcion;
         this.direccion = direccion;
     }
-    public Instancia(BigDecimal id, Empresa empresa, Estadoinstancia estadoinstancia, Tipoinstancia tipoinstancia, Usuario usuario, String fechadesde, String fechahasta, String tema, String descripcion, String direccion, Set checklists, Set registros) {
+    public Instancia(BigDecimal id, Empresa empresa, Estadoinstancia estadoinstancia, Tipoinstancia tipoinstancia, Usuario usuario, String fechadesde, String fechahasta, String tema, String descripcion, String direccion, Set cuestionarios, Set respuestas, Set registros) {
        this.id = id;
        this.empresa = empresa;
        this.estadoinstancia = estadoinstancia;
@@ -52,7 +53,8 @@ public class Instancia  implements java.io.Serializable {
        this.tema = tema;
        this.descripcion = descripcion;
        this.direccion = direccion;
-       this.checklists = checklists;
+       this.cuestionarios = cuestionarios;
+       this.respuestas = respuestas;
        this.registros = registros;
     }
    
@@ -126,12 +128,19 @@ public class Instancia  implements java.io.Serializable {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public Set getChecklists() {
-        return this.checklists;
+    public Set getCuestionarios() {
+        return this.cuestionarios;
     }
     
-    public void setChecklists(Set checklists) {
-        this.checklists = checklists;
+    public void setCuestionarios(Set cuestionarios) {
+        this.cuestionarios = cuestionarios;
+    }
+    public Set getRespuestas() {
+        return this.respuestas;
+    }
+    
+    public void setRespuestas(Set respuestas) {
+        this.respuestas = respuestas;
     }
     public Set getRegistros() {
         return this.registros;

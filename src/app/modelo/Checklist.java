@@ -1,5 +1,5 @@
 package app.modelo;
-// Generated 04-11-2020 20:26:53 by Hibernate Tools 4.3.1
+// Generated 12-12-2020 19:24:53 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -13,27 +13,28 @@ public class Checklist  implements java.io.Serializable {
 
 
      private BigDecimal id;
-     private Instancia instancia;
      private String nombre;
      private String descripcion;
-     private Set preguntas = new HashSet(0);
+     private Set listapreguntas = new HashSet(0);
+     private Set respuestas = new HashSet(0);
+     private Set cuestionarios = new HashSet(0);
 
     public Checklist() {
     }
 
 	
-    public Checklist(BigDecimal id, Instancia instancia, String nombre, String descripcion) {
+    public Checklist(BigDecimal id, String nombre, String descripcion) {
         this.id = id;
-        this.instancia = instancia;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-    public Checklist(BigDecimal id, Instancia instancia, String nombre, String descripcion, Set preguntas) {
+    public Checklist(BigDecimal id, String nombre, String descripcion, Set listapreguntas, Set respuestas, Set cuestionarios) {
        this.id = id;
-       this.instancia = instancia;
        this.nombre = nombre;
        this.descripcion = descripcion;
-       this.preguntas = preguntas;
+       this.listapreguntas = listapreguntas;
+       this.respuestas = respuestas;
+       this.cuestionarios = cuestionarios;
     }
    
     public BigDecimal getId() {
@@ -42,13 +43,6 @@ public class Checklist  implements java.io.Serializable {
     
     public void setId(BigDecimal id) {
         this.id = id;
-    }
-    public Instancia getInstancia() {
-        return this.instancia;
-    }
-    
-    public void setInstancia(Instancia instancia) {
-        this.instancia = instancia;
     }
     public String getNombre() {
         return this.nombre;
@@ -64,12 +58,26 @@ public class Checklist  implements java.io.Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public Set getPreguntas() {
-        return this.preguntas;
+    public Set getListapreguntas() {
+        return this.listapreguntas;
     }
     
-    public void setPreguntas(Set preguntas) {
-        this.preguntas = preguntas;
+    public void setListapreguntas(Set listapreguntas) {
+        this.listapreguntas = listapreguntas;
+    }
+    public Set getRespuestas() {
+        return this.respuestas;
+    }
+    
+    public void setRespuestas(Set respuestas) {
+        this.respuestas = respuestas;
+    }
+    public Set getCuestionarios() {
+        return this.cuestionarios;
+    }
+    
+    public void setCuestionarios(Set cuestionarios) {
+        this.cuestionarios = cuestionarios;
     }
 
 

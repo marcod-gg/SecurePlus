@@ -9,6 +9,6 @@ package app.control;
  *
  * @author Marco
  */
-public class ControladorCliente {
+public class ControladorUICliente {
     
 }

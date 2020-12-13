@@ -47,7 +47,9 @@ Contributor(s):
     <property name="hibernate.connection.username">SecurePlus</property>
     <property name="hibernate.connection.password">123</property>
     <mapping resource="app/modelo/Modulo.hbm.xml"/>
+    <mapping resource="app/modelo/Cuestionario.hbm.xml"/>
     <mapping resource="app/modelo/RolOperacion.hbm.xml"/>
+    <mapping resource="app/modelo/Listapregunta.hbm.xml"/>
     <mapping resource="app/modelo/Estadoinstancia.hbm.xml"/>
     <mapping resource="app/modelo/Opcion.hbm.xml"/>
     <mapping resource="app/modelo/Instancia.hbm.xml"/>
@@ -62,5 +64,6 @@ Contributor(s):
     <mapping resource="app/modelo/Empresa.hbm.xml"/>
     <mapping resource="app/modelo/Rol.hbm.xml"/>
     <mapping resource="app/modelo/Usuario.hbm.xml"/>
+    <mapping resource="app/modelo/Respuesta.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

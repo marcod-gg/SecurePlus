@@ -1,5 +1,5 @@
 package app.modelo;
-// Generated 04-11-2020 20:26:53 by Hibernate Tools 4.3.1
+// Generated 12-12-2020 19:24:53 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -14,7 +14,7 @@ public class Opcion  implements java.io.Serializable {
 
      private BigDecimal id;
      private String nombre;
-     private Set preguntas = new HashSet(0);
+     private Set respuestas = new HashSet(0);
 
     public Opcion() {
     }
@@ -24,10 +24,10 @@ public class Opcion  implements java.io.Serializable {
         this.id = id;
         this.nombre = nombre;
     }
-    public Opcion(BigDecimal id, String nombre, Set preguntas) {
+    public Opcion(BigDecimal id, String nombre, Set respuestas) {
        this.id = id;
        this.nombre = nombre;
-       this.preguntas = preguntas;
+       this.respuestas = respuestas;
     }
    
     public BigDecimal getId() {
@@ -44,12 +44,12 @@ public class Opcion  implements java.io.Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public Set getPreguntas() {
-        return this.preguntas;
+    public Set getRespuestas() {
+        return this.respuestas;
     }
     
-    public void setPreguntas(Set preguntas) {
-        this.preguntas = preguntas;
+    public void setRespuestas(Set respuestas) {
+        this.respuestas = respuestas;
     }
 
 

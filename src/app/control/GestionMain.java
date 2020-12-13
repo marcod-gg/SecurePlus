@@ -13,7 +13,7 @@ import app.vista.*;
 public class GestionMain {
     
     UIIniciarSesion login;
-    Controlador control;
+    ControladorLogin control;
     
     
     public GestionMain(){
@@ -21,7 +21,7 @@ public class GestionMain {
         login = new UIIniciarSesion();
         
         //Se carga controlador principal
-        control  = new Controlador(login);
+        control  = new ControladorLogin(login);
         
         //hacer visible el login
         login.setVisible(true);

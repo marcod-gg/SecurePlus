@@ -7,15 +7,14 @@ package app.control;
 
 import app.modelo.Usuario;
 import app.vista.UIAdmin;
+import app.vista.UICliente;
 import app.vista.UIIniciarSesion;
-import app.vista.UIMenu1;
 import app.vista.UIProfesional;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -27,21 +26,23 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author Marco
  */
-public class Controlador  implements ActionListener{
+public class ControladorLogin  implements ActionListener{
     Usuario usuario;
     String user;
     String pass;
+    ControladorTablas control;
     
     
     UIIniciarSesion login;
     
-    public Controlador(UIIniciarSesion log) {
+    public ControladorLogin(UIIniciarSesion log) {
         
         //Rescatar UI de Login
         this.login=log;
         this.login.btnIniciarSesion.addActionListener(this);
     }
 
+    // Se obtiene la acción a través del boton IniciarSesion
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource()==login.btnIniciarSesion){
@@ -53,10 +54,9 @@ public class Controlador  implements ActionListener{
         }
     }
     
-    
-    //LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN
-    
+    // Función para iniciar sesión
     public boolean iniciarSesion (String username, String password){
+        
         SessionFactory sesion = NewHibernateUtil.getSessionFactory();
         Session session;
         session = sesion.openSession();
@@ -67,55 +67,48 @@ public class Controlador  implements ActionListener{
         tx.commit();
         session.close();
         
+        
+        // Validación para comprobar que el usuario existe
         if (usuario!=null) {
+            
+            // Validación para comprobar que la contraseña coincide
             if (usuario.getPassword().equals(password)) {
-                
-                
+
+                // En este punto se obtiene el tipo de rol, y se inicia el menú correspondiente.
                 int i = usuario.getRol().getId().intValue();
-                System.out.println(i);
-                
-                UIMenu1 menu = new UIMenu1();
-                
-                
-//              En este punto se obtiene el tipo de rol, y se inicia el menú correspondiente.
                 switch (i) {
                 case 1:
                     UIAdmin uiadmin = new UIAdmin();
-                    ControladorAdmin cadmin = new ControladorAdmin(usuario, uiadmin);
+                    ControladorUIAdmin cadmin = new ControladorUIAdmin(usuario, uiadmin);
                     uiadmin.setVisible(true);
                     uiadmin.setLocationRelativeTo(uiadmin);
-                    System.out.println("admin");
                     break;
                 case 2:
                     UIProfesional uiprof = new UIProfesional();
-                    ControladorProfesional cusuario = new ControladorProfesional(usuario, uiprof);
-                    menu.setVisible(true);
-                    menu.setLocationRelativeTo(menu);
-                    System.out.println("prof");
+                    ControladorUIProfesional cusuario = new ControladorUIProfesional(usuario, uiprof);
+                    uiprof.setVisible(true);
+                    uiprof.setLocationRelativeTo(uiprof);
                     break;
                 case 3:
-                    menu.setVisible(true);
-                    menu.setLocationRelativeTo(menu);
-                    System.out.println("cliente");
+                    UICliente uicliente = new UICliente();
+                    ControladorUICliente ccliente = new ControladorUICliente();
+                    uicliente.setVisible(true);
+                    uicliente.setLocationRelativeTo(uicliente);
                     break;
                 }
                 return true;
-                
             }else{
-                JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta");
+                JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta 2");
                 return false;
             }
         }else{
-            JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta");
+            JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta 1");
             return false;
         }
     }
     
-    //LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN - LOGIN
-    
-    
-    //Función utilizada para encriptación de contraseña.
-    public String passToSHA256(String password) {
+    // Función utilizada para encriptación de contraseña.
+    private String passToSHA256(String password) {
 	MessageDigest md = null;
 	try {
 		md = MessageDigest.getInstance("SHA-256");

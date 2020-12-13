@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 04-11-2020 20:26:54 by Hibernate Tools 4.3.1 -->
+<!-- Generated 12-12-2020 19:24:54 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="app.modelo.Instancia" table="INSTANCIA" schema="SECUREPLUS" optimistic-lock="version">
         <id name="id" type="big_decimal">
@@ -35,11 +35,17 @@
         <property name="direccion" type="string">
             <column name="DIRECCION" length="250" not-null="true" />
         </property>
-        <set name="checklists" table="CHECKLIST" inverse="true" lazy="true" fetch="select">
+        <set name="cuestionarios" table="CUESTIONARIO" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="IDINSTANCIA" precision="22" scale="0" not-null="true" />
             </key>
-            <one-to-many class="app.modelo.Checklist" />
+            <one-to-many class="app.modelo.Cuestionario" />
+        </set>
+        <set name="respuestas" table="RESPUESTA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDINSTANCIA" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="app.modelo.Respuesta" />
         </set>
         <set name="registros" table="REGISTRO" inverse="true" lazy="true" fetch="select">
             <key>
