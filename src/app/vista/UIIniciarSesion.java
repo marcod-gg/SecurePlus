@@ -5,6 +5,7 @@
  */
 package app.vista;
 
+import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
 
 
@@ -40,9 +41,9 @@ public class UIIniciarSesion extends javax.swing.JFrame {
 
         pnlLogin = new javax.swing.JPanel();
         txtUser = new javax.swing.JTextField();
+        txtPass = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtPass = new javax.swing.JTextField();
         btnIniciarSesion = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -62,12 +63,13 @@ public class UIIniciarSesion extends javax.swing.JFrame {
         txtUser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtUser.setPreferredSize(new java.awt.Dimension(300, 40));
         txtUser.setRequestFocusEnabled(false);
-        txtUser.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtUserCaretUpdate(evt);
-            }
-        });
         pnlLogin.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+
+        txtPass.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
+        txtPass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPass.setPreferredSize(new java.awt.Dimension(300, 40));
+        txtPass.setRequestFocusEnabled(false);
+        pnlLogin.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,18 +84,6 @@ public class UIIniciarSesion extends javax.swing.JFrame {
         jLabel5.setText("Contraseña:");
         jLabel5.setPreferredSize(new java.awt.Dimension(300, 20));
         pnlLogin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 300, -1));
-
-        txtPass.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
-        txtPass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtPass.setBorder(null);
-        txtPass.setPreferredSize(new java.awt.Dimension(300, 40));
-        txtPass.setRequestFocusEnabled(false);
-        txtPass.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                txtPassCaretUpdate(evt);
-            }
-        });
-        pnlLogin.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
         btnIniciarSesion.setBackground(colorInfo);
         btnIniciarSesion.setFont(new java.awt.Font("Segoe UI Historic", 3, 18)); // NOI18N
@@ -134,14 +124,6 @@ public class UIIniciarSesion extends javax.swing.JFrame {
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
-
-    private void txtUserCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtUserCaretUpdate
-        
-    }//GEN-LAST:event_txtUserCaretUpdate
-
-    private void txtPassCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtPassCaretUpdate
-        
-    }//GEN-LAST:event_txtPassCaretUpdate
 
 
 

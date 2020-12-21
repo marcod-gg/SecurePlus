@@ -91,18 +91,18 @@ public class ControladorLogin  implements ActionListener{
                     break;
                 case 3:
                     UICliente uicliente = new UICliente();
-                    ControladorUICliente ccliente = new ControladorUICliente();
+                    ControladorUICliente ccliente = new ControladorUICliente(usuario, uicliente);
                     uicliente.setVisible(true);
                     uicliente.setLocationRelativeTo(uicliente);
                     break;
                 }
                 return true;
             }else{
-                JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta 2");
+                JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta");
                 return false;
             }
         }else{
-            JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta 1");
+            JOptionPane.showMessageDialog(login, "Usuario/contraseña incorrecta");
             return false;
         }
     }
